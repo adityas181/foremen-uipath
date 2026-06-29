@@ -5,7 +5,7 @@
 
 > **One closed loop — Sense → Reason → Decide → Act → Learn.** FOREMAN transforms tribal knowledge into organizational intelligence, so operations get faster, smarter, and continuously improving.
 
-**🔗 Links** · **Demo video:** [Youtube](https://youtu.be/eDzkyQti3TE), [Vimeo](https://vimeo.com/1205379686?share=copy&fl=sv&fe=ci) **Pitch deck:** [Presentation](https://docs.google.com/presentation/d/1CBKZXUenHTAcgkzF4MA7leRiuWBN0DVL/edit?slide=id.p36#slide=id.p36)
+**🔗 Links** · **Demo video:** [Youtube](https://youtu.be/eDzkyQti3TE), [Vimeo](https://vimeo.com/1205379686?share=copy&fl=sv&fe=ci) **Pitch deck:** [Presentation](https://docs.google.com/presentation/d/1CBKZXUenHTAcgkzF4MA7leRiuWBN0DVL/edit?slide=id.p1#slide=id.p1)
 
 **License:** Apache-2.0 · **Built with:** UiPath Maestro, Coded Agents, Action Center, Data Fabric, Context Grounding, Agent Memory, Integration Service, UiPath MCP + Python/LangGraph, Neo4j, Twilio, Gemini, React · **Coding agent:** Claude Code + UiPath Skills CLI (see [Built with a Coding Agent](#built-with-a-coding-agent))
 

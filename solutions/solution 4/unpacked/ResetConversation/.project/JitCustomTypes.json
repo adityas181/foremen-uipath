@@ -1,0 +1,40 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "7ZEL8en9VMMDXUq9nnIS3WrIn6ij8TmtXCVj5vYywQ",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [
+    "DataService.gAZL7infM3gg"
+  ],
+  "discardedAssemblyReplacements": {
+    "DataService.gAZL7infM3gg": "DataService.DataService.Entities",
+    "DataService.g2EANLnjM3gg": "DataService.DataService.Entities"
+  },
+  "assembliesJitInfo": {
+    "DataService.gAZL7infM3gg": {
+      "createdAt": "2026-06-17T13:51:34.0661318+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": []
+    },
+    "DataService.g2EANLnjM3gg": {
+      "createdAt": "2026-06-17T13:56:07.7250971+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "Conversation",
+        "SystemUser",
+        "UserType"
+      ]
+    },
+    "DataService.DataService.Entities": {
+      "createdAt": "2026-06-17T16:24:37.0748126+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "Conversation",
+        "SystemUser",
+        "UserType"
+      ]
+    }
+  }
+}

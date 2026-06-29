@@ -1,0 +1,4 @@
+part_id,name,equipment_class,kind,genuine,stock_qty,location,lead_time_days
+MC4-COMPAT-MIX,Mixed-brand MC4-compatible pair,pv_string,connector,false,40,DEL-warehouse,0
+MC4-CRIMP-DIE,MC4 crimp die correct profile,pv_string,tool,true,3,DEL-warehouse,0
+MC4-PAIR-GEN,Genuine MC4 male-female pair,pv_string,connector,true,8,DEL-warehouse,0

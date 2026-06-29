@@ -1,0 +1,122 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CA90CEF2FB5_curated_whatsapp_message.Bundle;assembly=CA90CEF2FB5_curated_.2bjbR1Aaj5P1AT61h1ITG0T4"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="phone" Type="InArgument(x:String)" />
+    <x:Property Name="text" Type="InArgument(x:String)" />
+    <x:Property Name="from" Type="InArgument(x:String)" />
+    <x:Property Name="presignedUrl" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.phone>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.phone>
+  <this:Main.text>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.text>
+  <this:Main.from>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.from>
+  <this:Main.presignedUrl>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.presignedUrl>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CA90CEF2FB5_Messages.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CA90CEF2FB5_curated_whatsapp_message.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CC47D474209_Messages.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CC47D474209_curated_whatsapp_message.Bundle</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+      <AssemblyReference>CC47D474209_curated_.gm1dp3Cf4hI1rT6XF4YuPY34</AssemblyReference>
+      <AssemblyReference>CC47D474209_Messages.AxpM72SiDrK1Fn3yP1I1HAc4</AssemblyReference>
+      <AssemblyReference>CA90CEF2FB5_curated_.2bjbR1Aaj5P1AT61h1ITG0T4</AssemblyReference>
+      <AssemblyReference>CA90CEF2FB5_Messages.aGOYj3cDkRB1YxpiUyrzV44</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
+    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACuVWTW/bOBD9K4TOtlbStm5rIAfb27TerWsjVtrDoggoamIxlkktOUzqBgH6N/r3+kt2qA/HrVNv95BT4Ys4HD7yvTcc+jY4lVDmdqIVcqnABMPbYAnciIJnJTSTwfDvD73gT4lTVTmsYz7tLd9AMPTxC+EMR8gvbgqOllfVxQas5SsIesEf0lYl37bJkyaRdYlsLxGsMLJCqdWRRCb9GZjOrkAgrUq3lcc9lwuORThVCCtaSBhLMNdSQDgSKK8lSrDh8v1Lhc3nZPQimrw8TU7HT394+HDsVF5C+KP5HnsIJUyyq+wsHvGrp4t4lA7iIp6mr6L0SY+9A2PpZCdxGPkfrXclOgMnChwaXvbYwmWlFH/BNtVrUCfKlSVxPIN/HFgMhpe8tNCMpQEyAY2jce3IGy1q3o0j81qf2i8CmFoKtb75JXcU8lMznXvxWpd7wWtuz5W8lJB7WW2Hf2+7L4Wd8agP7E31gZFpAcyAAHkN5uvnL5ZVhVbAlNtkYBiSpkxaZl1VaeMN14q990KPqureXotGqhWNl5Q0N7mv07jeSa5ok9tgoa1sN1wYueFmGxDJM7CVVhY6Iv8l3Fjnft2O4aXRmwOOp23wgKUFlf8vjkSRcZX7OQMraRHobOxGYsHSG1lKfVyA5PEFyPz4ewHqpIcE6K4oapbVcqD/xL0COE7o98ciRN1r7vDBIn6c7vXLNqZv3fnejcaEBxqSj8zo/ekA9nvVB7J9vytN9KYiQHqd7vuTRa4ELLghn+gWkcO3QUuKtq1p0a70yCnqitoQDwo7SThFH+ur1m+0a2qytWbbetjaThNNW22r4UjZvEasZoCFJhK+ktHXrheilJ8g7+BbnCX1jV3PY7MdyISLAkg+vXbVO16S0kTrrouPjb6xYKYImzbeXhMi5ys8sDIPqPAXXKwJb1+N5FkY9TNAHiZRMogG8SBM9uXpmnnXg3YT34CEz3aC/PQt+Vn95hU0l8XDGaC0A1Hny5Ri/nLR6LcjWEtdOg9FtaWdETD1y3n0nA9ExvsAyfP+k0Es+lxEcX9wCQlkA0jiF57eG65WzsMMA1A0nvGPCxouyUV6gKIoqt/MMZ1wTZUzKSjdu9Reh6k9c3SvNzApJTXD8/pAbc2m8BHHpRbr+t/V3b/BVsh6iAkAAA==" ConnectionId="a08a6cba-ee28-461c-ac01-6fe2eb6e2197" DisplayName="Send WhatsApp Message" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="05bc5e7e-defb-3a4e-b66c-828da44930b3">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="_to" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">[string.Format("{0}", phone)]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="from" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">+14155238886</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="body" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">[string.Format("{0}", text)]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_curated_whatsapp_message" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:curated_whatsapp_message" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+  </Sequence>
+</Activity>

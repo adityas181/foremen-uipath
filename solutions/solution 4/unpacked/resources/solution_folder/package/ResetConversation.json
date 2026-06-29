@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "ResetConversation",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "c5e573e8-5f52-449b-ae33-835b6fbd3042",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "ResetConversation",
+      "description": null
+    },
+    "locks": [],
+    "key": "14cebe0c-3f2d-4c95-8b08-cf6a49a15398"
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "case": {
+    "asset_id": "AST-SCB-DEL-0788",
+    "site_id": "DEL-0788",
+    "batch_id": "HV-BATCH-19",
+    "worker_text": "sir ye MC4 connector fir se kharab, copper wire bahar nikla hua hai, contact bilkul loose hai",
+    "primary_fault": {
+      "type": "exposed_wiring",
+      "component": "MC4 connector",
+      "severity": "high",
+      "evidence": "Red wire and metal contact pin are pulled out of the plastic housing; bare copper strands are visible.",
+      "confidence": 0.85
+    },
+    "history": {
+      "is_recurrence": false,
+      "match_type": "related",
+      "severity_trend": "same",
+      "recurrence_count": 1,
+      "past_resolution": "Replaced male/female MC4 pair, re-crimped conductors, applied dielectric grease, torque-checked.",
+      "prior_fault_type": "melted_connector"
+    }
+  },
+  "diagnosis": {
+    "root_cause": "Mechanical failure causing a loose crimp and exposed copper strands leading to a high-resistance joint and potential thermal runaway.",
+    "recommendation": "1. Immediately isolate the affected string by opening the DC isolator under no load and apply lockout/tagout.\n2. Cut out and replace both halves of the damaged MC4 connector with matched, genuine connectors per installation specification.\n3. Perform an IR thermal scan on adjacent connectors and the combiner box to identify any other potential hotspots.\n4. Root-cause analysis to determine if the failure was due to poor crimp, cross-mating, or water ingress.\n5. Audit the array for similar defects and conduct a fleet-wide review if cross-mating is found.\n6. Do not reuse the damaged connector or mix connector brands.\n7. Follow all safety protocols including use of arc-rated PPE and insulated tools.",
+    "confidence": 0.9,
+    "skill_hit": "SK-pv-mc4-connector-burn",
+    "skill_status": "candidate",
+    "match_type": "exact",
+    "citations": [
+      "mc4-connector-install-spec.pdf",
+      "pv-dc-arc-safety-bulletin.pdf",
+      "connector-cross-mating-warning.pdf"
+    ],
+    "fingerprint": {
+      "equipment_class": "pv_array",
+      "component": "MC4 connector",
+      "failure_mode": "exposed_wiring"
+    },
+    "engine_safety": "critical",
+    "systemic_hint": true
+  },
+  "risk": {
+    "score": 84,
+    "band": "CRITICAL",
+    "contributors": [
+      {
+        "factor": "safety_critical",
+        "points": 50,
+        "reason": "DC arc + fire hazard; human gate mandatory"
+      },
+      {
+        "factor": "blast_radius",
+        "points": 24,
+        "reason": "3 assets share crew/lot/batch and are at risk"
+      },
+      {
+        "factor": "recurrence",
+        "points": 10,
+        "reason": "fault recurred (count=1, prior=melted_connector); prior fix did not hold"
+      }
+    ],
+    "rationale": "This risk is CRITICAL mainly because of a DC arc and fire hazard requiring a mandatory human gate, plus additional risk from shared crew and batch among three assets, and a prior melted connector that recurred despite earlier repairs."
+  },
+  "invoked": [
+    {
+      "id": "safety_compliance",
+      "process": "foreman-safety",
+      "ok": true,
+      "why": "SAFETY FLOOR (code-forced): engine_safety==critical or a hazard term (arc/fire/burn/melt/exposed/shock/HV/short/...) present in fault/perception/fingerprint",
+      "result": {
+        "safety_critical": true,
+        "protocol": "1. Isolate the affected PV string by opening the DC isolator under NO LOAD conditions to prevent DC arcing.\n2. Apply lockout/tagout (LOTO) to ensure the circuit remains de-energised during work.\n3. Confirm the string is de-energised using a meter rated for the system DC voltage (up to 1500 V).\n4. Only after confirming de-energisation, proceed to cut out and replace both mating MC4 connectors with matched genuine pairs, re-crimped to specification.\n5. Perform an IR thermal scan of adjacent connectors and the combiner box to detect any further defects.\n6. Audit the array for cross-mated connectors or other systemic defects as part of fleet review.",
+        "standard_clause": [
+          "NEC 690.11 (DC AFCI)",
+          "IEC 62852 (PV connectors)",
+          "IEC 62548 (PV array design)",
+          "UL 6703",
+          "No-load isolation rule from pv-dc-arc-safety-bulletin.pdf"
+        ],
+        "blockers": [
+          "Confirm de-energised at system DC voltage with a rated meter",
+          "No work in wet conditions",
+          "Do not separate or cut connectors under load",
+          "Replace both halves of the connector pair with matched genuine connectors"
+        ],
+        "citations": [
+          "pv-dc-arc-safety-bulletin.pdf",
+          "mc4-connector-install-spec.pdf",
+          "connector-cross-mating-warning.pdf"
+        ],
+        "can_block_auto_resolve": true,
+        "error": ""
+      }
+    },
+    {
+      "id": "fleet_blast_radius",
+      "process": "foreman-fleet-blast-radius",
+      "ok": true,
+      "why": "Systemic_hint=true and recommendations call for IR scans of adjacent connectors/combiner and an array audit/fleet-wide review if cross-mating is found. History shows a related prior MC4 issue (prior_fault_type=melted_connector) that was re-crimped/replaced, indicating a potential install/crew-wide workmanship pattern across the array.",
+      "result": {
+        "systemic": true,
+        "affected_count": 3,
+        "affected_sites": [
+          "DEL-0788",
+          "DEL-0791",
+          "DEL-0802"
+        ],
+        "batch_id": "HV-BATCH-19",
+        "batch_status": "",
+        "known_pattern": false,
+        "prior_failures": 0,
+        "affected_assets": [
+          "AST-SCB-DEL-0788",
+          "AST-SCB-DEL-0791",
+          "AST-SCB-DEL-0802"
+        ],
+        "criticality_rank": [
+          {
+            "factor": "HV-BATCH-19",
+            "factorType": "Batch",
+            "count": 3
+          },
+          {
+            "factor": "CREW-PV-W",
+            "factorType": "Crew",
+            "count": 3
+          },
+          {
+            "factor": "MC4-LOT-X",
+            "factorType": "PartLot",
+            "count": 3
+          }
+        ],
+        "recommendation": "Systemic - 3 assets share the same crew/lot/batch and are at risk; escalate a fleet review and pre-empt them."
+      }
+    },
+    {
+      "id": "parts_logistics",
+      "process": "foreman-parts",
+      "ok": true,
+      "why": "Fix requires cutting out and replacing both halves of the damaged MC4 connector with matched, genuine parts; consumables/tools (dielectric grease, LOTO tags, PPE) also needed.",
+      "result": {
+        "in_stock": true,
+        "location": "DEL-warehouse",
+        "lead_time_days": 0,
+        "substitute": null,
+        "blocks_fix": false,
+        "error": ""
+      }
+    },
+    {
+      "id": "field_dispatch",
+      "process": "foreman-field-dispatch",
+      "ok": true,
+      "why": "Physical on-site work is required: isolate string, cut out and replace MC4 connectors, and perform IR thermal scans of adjacent connectors/combiner.",
+      "result": {
+        "crew_id": "CREW-PV-W",
+        "skill_match": true,
+        "certification_ok": true,
+        "eta_min": 27,
+        "route": "25.9 km by road",
+        "error": ""
+      }
+    },
+    {
+      "id": "site_access_weather",
+      "process": "foreman-weather",
+      "ok": true,
+      "why": "Fingerprint shows environment=outdoor; PV array work is weather-exposed and live-environment sensitive.",
+      "result": {
+        "safe_window": "Today from 14:30 to 19:30 IST is a dry and lightning-free window safe for work.",
+        "weather_blockers": [],
+        "access_constraints": [
+          "outdoor ground mount environment",
+          "exposed outdoor / ground-mount site \u2014 weather-gated access"
+        ],
+        "earliest_safe_time": "2026-06-25 14:30 IST",
+        "error": ""
+      }
+    }
+  ],
+  "not_invoked": [
+    {
+      "id": "warranty_entitlement",
+      "why": "Root cause indicates loose crimp/field workmanship (and possibly cross-mating/water ingress). No evidence of a vendor/spec/manufacturing defect or warranty window. History after prior re-crimp/repair further points to workmanship, not supplier defect."
+    },
+    {
+      "id": "sla_commercial_impact",
+      "why": "No information that this site serves multiple tenants/customers under an SLA or that commercial exposure changes priority."
+    },
+    {
+      "id": "vendor_supply_chain",
+      "why": "No supplier batch/lot/recall or counterfeit/substitution indicated; findings point to field workmanship (loose crimp/cross-mating). Guidance says keep OFF unless a fleet audit proves procurement substitution."
+    },
+    {
+      "id": "telemetry_predictive",
+      "why": "The connector has already hard-failed (exposed wiring, high-resistance joint); immediate isolation and replacement are required\u2014no trend-based defer/schedule decision to be made."
+    },
+    {
+      "id": "cost_optimization",
+      "why": "The repair is forced and straightforward (replace damaged MC4s); there is no genuine repair-vs-replace-vs-upgrade trade-off."
+    }
+  ],
+  "action_plan": [
+    {
+      "order": 1,
+      "category": "SAFETY",
+      "action": "ISOLATE & MAKE SAFE FIRST \u2014 1. Isolate the affected PV string by opening the DC isolator under NO LOAD conditions to prevent DC arcing.\n2. Apply lockout/tagout (LOTO) to ensure the circuit remains de-energised during work.\n3. Confirm the string is de-energised using a meter rated for the system DC voltage (up to 1500 V).\n4. Only after confirming de-energisation, proceed to cut out and replace both mating MC4 connectors with matched genuine pairs, re-crimped to specification.\n5. Perform an IR thermal scan of adjacent connectors and the combiner box to detect any further defects.\n6. Audit the array for cross-mated connectors or other systemic defects as part of fleet review.",
+      "source": "foreman-safety"
+    },
+    {
+      "order": 2,
+      "category": "SAFETY",
+      "action": "Clear safety blocker before work: Confirm de-energised at system DC voltage with a rated meter",
+      "source": "foreman-safety"
+    },
+    {
+      "order": 3,
+      "category": "SAFETY",
+      "action": "Clear safety blocker before work: No work in wet conditions",
+      "source": "foreman-safety"
+    },
+    {
+      "order": 4,
+      "category": "SAFETY",
+      "action": "Clear safety blocker before work: Do not separate or cut connectors under load",
+      "source": "foreman-safety"
+    },
+    {
+      "order": 5,
+      "category": "SAFETY",
+      "action": "Clear safety blocker before work: Replace both halves of the connector pair with matched genuine connectors",
+      "source": "foreman-safety"
+    },
+    {
+      "order": 6,
+      "category": "PARTS",
+      "action": "Parts in stock at DEL-warehouse \u2014 pull for the job",
+      "source": "foreman-parts"
+    },
+    {
+      "order": 7,
+      "category": "CREW",
+      "action": "Dispatch crew CREW-PV-W (certified); ETA 27 min via 25.9 km by road",
+      "source": "foreman-field-dispatch"
+    },
+    {
+      "order": 8,
+      "category": "WINDOW",
+      "action": "Schedule into earliest safe window 2026-06-25 14:30 IST; access constraints ['outdoor ground mount environment', 'exposed outdoor / ground-mount site \u2014 weather-gated access']",
+      "source": "foreman-weather"
+    },
+    {
+      "order": 9,
+      "category": "FLEET AUDIT",
+      "action": "Audit 3 at-risk sibling asset(s) sharing batch/crew/lot: ['AST-SCB-DEL-0788', 'AST-SCB-DEL-0791', 'AST-SCB-DEL-0802'] \u2014 Systemic - 3 assets share the same crew/lot/batch and are at risk; escalate a fleet review and pre-empt them.",
+      "source": "foreman-fleet-blast-radius"
+    }
+  ],
+  "summary": "Diagnosis: Mechanical failure causing a loose crimp and exposed copper strands leading to a high-resistance joint and potential thermal runaway.. Recommended fix: 1. Immediately isolate the affected string by opening the DC isolator under no load and apply lockout/tagout.\n2. Cut out and replace both halves of the damaged MC4 connector with matched, genuine connectors per installation specification.\n3. Perform an IR thermal scan on adjacent connectors and the combiner box to identify any other potential hotspots.\n4. Root-cause analysis to determine if the failure was due to poor crimp, cross-mating, or water ingress.\n5. Audit the array for similar defects and conduct a fleet-wide review if cross-mating is found.\n6. Do not reuse the damaged connector or mix connector brands.\n7. Follow all safety protocols including use of arc-rated PPE and insulated tools.. Risk is CRITICAL (score 84). Auto-resolve is BLOCKED \u2014 a human safety gate is required. NOTE: this RECURRED after a prior repair (Replaced male/female MC4 pair, re-crimped conductors, applied dielectric grease, torque-checked.) \u2014 a fleet audit and a crew/process review matter, not just a re-fix. Fleet exposure: 3 sibling asset(s) at risk. Plan: 1) SAFETY: ISOLATE & MAKE SAFE FIRST \u2014 1. Isolate the affected PV string by opening the DC isolator under NO LOAD conditions to prevent DC arcing.\n2. Apply lockout/tagout (LOTO) to ensure the circuit remains de-energised during work.\n3. Confirm the string is de-energised using a meter rated for the system DC voltage (up to 1500 V).\n4. Only after confirming de-energisation, proceed to cut out and replace both mating MC4 connectors with matched genuine pairs, re-crimped to specification.\n5. Perform an IR thermal scan of adjacent connectors and the combiner box to detect any further defects.\n6. Audit the array for cross-mated connectors or other systemic defects as part of fleet review. | 2) SAFETY: Clear safety blocker before work: Confirm de-energised at system DC voltage with a rated meter | 3) SAFETY: Clear safety blocker before work: No work in wet conditions | 4) SAFETY: Clear safety blocker before work: Do not separate or cut connectors under load | 5) SAFETY: Clear safety blocker before work: Replace both halves of the connector pair with matched genuine connectors | 6) PARTS: Parts in stock at DEL-warehouse \u2014 pull for the job | 7) CREW: Dispatch crew CREW-PV-W (certified); ETA 27 min via 25.9 km by road | 8) WINDOW: Schedule into earliest safe window 2026-06-25 14:30 IST; access constraints ['outdoor ground mount environment', 'exposed outdoor / ground-mount site \u2014 weather-gated access'] | 9) FLEET AUDIT: Audit 3 at-risk sibling asset(s) sharing batch/crew/lot: ['AST-SCB-DEL-0788', 'AST-SCB-DEL-0791', 'AST-SCB-DEL-0802'] \u2014 Systemic - 3 assets share the same crew/lot/batch and are at risk; escalate a fleet review and pre-empt them.",
+  "report_url": "https://crpabetaorch1nestg.blob.core.windows.net/orchestrator-8b8bd555-2c55-413e-83b5-e63b6043292d/BlobFilePersistence/0a90f208-4642-4c0b-848c-e2b4eaab61a3/mc4-connector-install-spec.pdf?sv=2025-07-05&st=2026-06-25T21%3A50%3A43Z&se=2026-06-25T22%3A11%3A13Z&sr=b&sp=r&sig=Ex%2Bz9TaRLDxJQx9XZr%2BLkxzntyztxG5QB/2PaVE/QdQ%3D",
+  "spoken_opener": "This is FOREMAN about AST-SCB-DEL-0788 - a damaged MC4 connector with exposed copper, a DC-arc and fire risk; three sibling strings share the same crew and lot.",
+  "spoken_recommendation": "I recommend isolating the string under lockout, replacing both connector halves with genuine parts, and a fleet audit of the three sibling assets.",
+  "transcript": [
+    "FOREMAN: ...opener...",
+    "Manager: approved, go ahead",
+    "FOREMAN: logged, thank you"
+  ],
+  "decision": "approved",
+  "call_sid": "CA0123456789abcdef",
+  "call_to": "+919999999999",
+  "call_from": "+12025550100",
+  "recipients": "miadityas181@gmail.com",
+  "media_blob_path": "MMab99ff2f28369250e92bf48a6ca0ff3a_ME078ea8a745e6aea13cf3e8205c300a1b.mp4",
+  "dry_run": false
+}

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:de="clr-namespace:DataService.Entities;assembly=DataService.DataService.Entities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_caseId" Type="InArgument(x:String)" />
+    <x:Property Name="in_phone" Type="InArgument(x:String)" />
+    <x:Property Name="in_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_direction" Type="InArgument(x:String)" />
+    <x:Property Name="in_mediaPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_mediaType" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.in_caseId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_caseId>
+  <this:Main.in_phone>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_phone>
+  <this:Main.in_text>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_text>
+  <this:Main.in_direction>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_direction>
+  <this:Main.in_mediaPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_mediaPath>
+  <this:Main.in_mediaType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_mediaType>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>DataService.Entities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+      <AssemblyReference>DataService.DataService.Entities</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Annotations</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
+    <uda:CreateEntityRecord x:TypeArguments="de:ConversationLog" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="48866bfc-366b-f111-8fcb-000d3ab36606" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.ConversationLog() With {  .caseId = string.Format(&quot;{0}&quot;, in_caseId),  .createdAt = DateAndTime.Now,  .direction = string.Format(&quot;{0}&quot;, in_direction),  .mediaPath = string.Format(&quot;{0}&quot;, in_mediaPath),  .mediaType = string.Format(&quot;{0}&quot;, in_mediaType),  .phone = string.Format(&quot;{0}&quot;, in_phone),  .text = string.Format(&quot;{0}&quot;, in_text) }]" TimeoutInMs="30000">
+      <uda:CreateEntityRecord.State>
+        <udam:RecordState>
+          <udam:RecordState.SelectedFields>
+            <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="7">
+              <udam:DynamicEntityField Id="52866bfc-366b-f111-8fcb-000d3ab36606" Name="caseId">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[string.Format("{0}", in_caseId)]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="58866bfc-366b-f111-8fcb-000d3ab36606" Name="createdAt">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="s:DateTimeOffset">[DateAndTime.Now]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="54866bfc-366b-f111-8fcb-000d3ab36606" Name="direction">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[string.Format("{0}", in_direction)]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="56866bfc-366b-f111-8fcb-000d3ab36606" Name="mediaPath">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[string.Format("{0}", in_mediaPath)]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="57866bfc-366b-f111-8fcb-000d3ab36606" Name="mediaType">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[string.Format("{0}", in_mediaType)]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="53866bfc-366b-f111-8fcb-000d3ab36606" Name="phone">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[string.Format("{0}", in_phone)]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="55866bfc-366b-f111-8fcb-000d3ab36606" Name="text">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[string.Format("{0}", in_text)]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+            </scg:List>
+          </udam:RecordState.SelectedFields>
+        </udam:RecordState>
+      </uda:CreateEntityRecord.State>
+    </uda:CreateEntityRecord>
+  </Sequence>
+</Activity>

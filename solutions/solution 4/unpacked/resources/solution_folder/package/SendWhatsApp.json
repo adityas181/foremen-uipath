@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SendWhatsApp",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "c6d107d1-1ac6-442d-8ef1-4022ccf572ab",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "SendWhatsApp",
+      "description": null
+    },
+    "locks": [],
+    "key": "54172b8a-e4b3-4cb8-a77f-30fc14dcc36c"
+  }
+}

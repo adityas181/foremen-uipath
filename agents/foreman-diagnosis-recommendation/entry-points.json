@@ -1,0 +1,187 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "73fcca70-4f8b-4bd1-9fc4-f08de69a2739",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "perception": {
+                        "additionalProperties": true,
+                        "description": "vision_output.perception",
+                        "title": "Perception",
+                        "type": "object"
+                    },
+                    "history_match": {
+                        "additionalProperties": true,
+                        "description": "vision_output.history_match (may be {})",
+                        "title": "History Match",
+                        "type": "object"
+                    },
+                    "asset_id": {
+                        "default": "",
+                        "description": "Asset id, e.g. 'AST-SCB-DEL-0788'",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "site_id": {
+                        "default": "",
+                        "description": "Site id, e.g. 'DEL-0788'",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "worker_text": {
+                        "default": "",
+                        "description": "Worker-reported issue text",
+                        "title": "Worker Text",
+                        "type": "string"
+                    },
+                    "issue_text_received": {
+                        "default": "",
+                        "description": "Worker text echoed by the vision agent (fallback for worker_text)",
+                        "title": "Issue Text Received",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "skill_hit": {
+                        "type": "string"
+                    },
+                    "skill_status": {
+                        "type": "string"
+                    },
+                    "match_type": {
+                        "default": "new",
+                        "title": "Match Type",
+                        "type": "string"
+                    },
+                    "root_cause": {
+                        "default": "",
+                        "title": "Root Cause",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "default": 0.0,
+                        "title": "Confidence",
+                        "type": "number"
+                    },
+                    "alternatives_ruled_out": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Alternatives Ruled Out",
+                        "type": "array"
+                    },
+                    "recommendation": {
+                        "default": "",
+                        "title": "Recommendation",
+                        "type": "string"
+                    },
+                    "citations": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Citations",
+                        "type": "array"
+                    },
+                    "what_differs": {
+                        "default": "",
+                        "title": "What Differs",
+                        "type": "string"
+                    },
+                    "fingerprint": {
+                        "properties": {
+                            "equipment_class": {
+                                "default": "",
+                                "title": "Equipment Class",
+                                "type": "string"
+                            },
+                            "component": {
+                                "default": "",
+                                "title": "Component",
+                                "type": "string"
+                            },
+                            "failure_mode": {
+                                "default": "",
+                                "title": "Failure Mode",
+                                "type": "string"
+                            },
+                            "capacity_band": {
+                                "default": "",
+                                "title": "Capacity Band",
+                                "type": "string"
+                            },
+                            "environment": {
+                                "default": "",
+                                "title": "Environment",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Fingerprint",
+                        "type": "object"
+                    },
+                    "safety": {
+                        "default": "normal",
+                        "title": "Safety",
+                        "type": "string"
+                    },
+                    "systemic_hint": {
+                        "default": false,
+                        "title": "Systemic Hint",
+                        "type": "boolean"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "diagnose",
+                        "name": "diagnose",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "diagnose",
+                        "label": null
+                    },
+                    {
+                        "source": "diagnose",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

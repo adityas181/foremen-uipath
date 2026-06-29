@@ -1,0 +1,3 @@
+crew_id,name,region,skills,certifications,home_site,available
+CREW-PV-S,South PV install crew,South,rf_cabling;corrosion_repair,rf_certified;loto,MUM-0345,true
+CREW-PV-W,West PV install crew,West,pv_dc;mc4_termination;thermal_scan,pv_certified;loto;dc_arc,DEL-0791,true

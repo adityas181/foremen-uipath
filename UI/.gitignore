@@ -1,0 +1,45 @@
+# ── Secrets & local config (NEVER commit) ──────────────────────────
+.env
+.env.*
+!.env.example
+*.local
+# UiPath auth tokens written by `uipath auth`
+**/.uipath/
+**/.local/
+# Zip archives may BUNDLE .env secrets (e.g. knowledge-Agent.zip ships a .env) — never commit
+*.zip
+# UiPath agent runtime state DB (build artifact)
+**/__uipath/
+
+# ── Python ──────────────────────────────────────────────────────────
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# ── Node / build ────────────────────────────────────────────────────
+node_modules
+**/node_modules/
+dist
+dist-ssr
+
+# ── Logs & scratch ──────────────────────────────────────────────────
+*.log
+server/cf*.log
+_*.json
+
+# ── Local-only assets ───────────────────────────────────────────────
+# Raw logo/source images used only to GENERATE src/assets/logos/* at build time.
+uipath-assets/
+
+# ── Local dev binaries (NEVER commit) ───────────────────────────────
+# cloudflared.exe lives here so the tunnel task has a stable path.
+.tools/
+
+# ── OS / editor ─────────────────────────────────────────────────────
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+.vercel

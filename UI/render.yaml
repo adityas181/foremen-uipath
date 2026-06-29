@@ -1,0 +1,37 @@
+# Render blueprint — the two always-on FOREMAN webhooks (free tier, WebSocket-capable).
+# The UI itself is hosted separately on Vercel (static). Full steps: DEPLOY.md
+#
+# Deploy:  Render dashboard → New → Blueprint → pick this repo → it reads render.yaml.
+# Then set the `sync: false` env vars (secrets) in the dashboard.
+
+services:
+  # 1) view-backend — the UiPath agent → UI bridge.
+  #    HTTP  POST /ingest/{case_id}   (UiPath Maestro Case / coded agents push here)
+  #    WS    /ws                      (the hosted UI subscribes; events fan out live)
+  - type: web
+    name: foreman-view-backend
+    runtime: python
+    plan: free
+    rootDir: server
+    buildCommand: pip install -r requirements-deploy.txt
+    startCommand: uvicorn view_backend:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: FOREMAN_INGEST_SECRET
+        sync: false # set a strong secret in the dashboard (UiPath must send the same)
+
+  # 2) voice webhook — Twilio drives this during a two-way escalation call; it
+  #    serves the TwiML and pushes the live transcript to the view-backend above.
+  - type: web
+    name: foreman-voice-webhook
+    runtime: python
+    plan: free
+    rootDir: VoiceAgent/Solutionvoice2nd/Agent
+    buildCommand: pip install fastapi "uvicorn[standard]" httpx
+    startCommand: uvicorn voice_server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: FOREMAN_BACKEND_URL
+        sync: false # = the view-backend public URL, e.g. https://foreman-view-backend.onrender.com
+      - key: FOREMAN_INGEST_SECRET
+        sync: false # must match the view-backend secret

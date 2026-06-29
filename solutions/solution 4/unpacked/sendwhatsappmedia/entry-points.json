@@ -1,0 +1,32 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "dce82c52-0f8f-4cf7-bd8c-d21b93f4f994",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "presignedUrl": {
+            "type": "string",
+            "x-default-expression": "\"https://crpabetaorch1nestg.blob.core.windows.net/orchestrator-8b8bd555-2c55-413e-83b5-e63b6043292d/BlobFilePersistence/0a90f208-4642-4c0b-848c-e2b4eaab61a3/mc4-connector-install-spec.pdf?sv=2025-07-05&st=2026-06-24T22%3A31%3A47Z&se=2026-06-24T22%3A52%3A17Z&sr=b&sp=r&sig=l4QhdzNw42NkSqQwWxyNMImFK5WHEyE0mQ1F/KPm%2Bhs%3D\"",
+            "default": "https://crpabetaorch1nestg.blob.core.windows.net/orchestrator-8b8bd555-2c55-413e-83b5-e63b6043292d/BlobFilePersistence/0a90f208-4642-4c0b-848c-e2b4eaab61a3/mc4-connector-install-spec.pdf?sv=2025-07-05&st=2026-06-24T22%3A31%3A47Z&se=2026-06-24T22%3A52%3A17Z&sr=b&sp=r&sig=l4QhdzNw42NkSqQwWxyNMImFK5WHEyE0mQ1F/KPm%2Bhs%3D"
+          }
+        },
+        "required": []
+      },
+      "output": null
+    }
+  ]
+}

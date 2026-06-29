@@ -1,0 +1,108 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "de3bfe10-7e5c-48e0-8203-2fdc75e5eec4",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "fix": {
+                        "default": "",
+                        "description": "The recommended fix text (free text)",
+                        "title": "Fix",
+                        "type": "string"
+                    },
+                    "required_parts": {
+                        "description": "Concrete parts the fix needs; if empty, inferred from `fix`",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Required Parts",
+                        "type": "array"
+                    },
+                    "equipment_class": {
+                        "default": "",
+                        "description": "e.g. 'pv_string'; scopes the Inventory lookup",
+                        "title": "Equipment Class",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "in_stock": {
+                        "default": false,
+                        "title": "In Stock",
+                        "type": "boolean"
+                    },
+                    "location": {
+                        "default": "",
+                        "title": "Location",
+                        "type": "string"
+                    },
+                    "lead_time_days": {
+                        "default": 0,
+                        "title": "Lead Time Days",
+                        "type": "integer"
+                    },
+                    "substitute": {
+                        "type": "string"
+                    },
+                    "blocks_fix": {
+                        "default": false,
+                        "title": "Blocks Fix",
+                        "type": "boolean"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "check_parts",
+                        "name": "check_parts",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "check_parts",
+                        "label": null
+                    },
+                    {
+                        "source": "check_parts",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

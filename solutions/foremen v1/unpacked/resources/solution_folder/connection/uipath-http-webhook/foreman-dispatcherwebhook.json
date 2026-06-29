@@ -1,0 +1,29 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "foreman-dispatcherwebhook",
+    "kind": "connection",
+    "type": "uipath-http-webhook",
+    "apiVersion": "integrationservice.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "connectorName": "HTTP Webhook",
+      "name": "foreman-dispatcherwebhook",
+      "description": null,
+      "authenticationType": "AuthenticateAfterDeployment",
+      "connectorVersion": "1.5.8",
+      "connectorKey": "uipath-http-webhook",
+      "pollingInterval": 5
+    },
+    "locks": [],
+    "key": "a0271858-8c40-44c2-8655-a391766f72f0"
+  }
+}

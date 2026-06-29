@@ -1,0 +1,343 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "EventTrigger",
+      "key": "4f6e8002-9f44-474c-83ea-dfeb5c8e78ab_trigger_1",
+      "id": "EventTrigger4f6e8002-9f44-474c-83ea-dfeb5c8e78ab_trigger_1",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "4f6e8002-9f44-474c-83ea-dfeb5c8e78ab",
+          "isExpression": false
+        },
+        "EntryPointUniqueId": {
+          "defaultValue": "59a5456b-ac48-4475-8b3d-8f824b0666f4",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "UseConnectionService": "true",
+        "Connector": "uipath-http-webhook",
+        "ActivityName": "Trigger 1",
+        "BindingsVersion": "2.2",
+        "ObjectName": "HTTP_WEBHOOK",
+        "Operation": "GENERIC",
+        "FilterExpression": ""
+      }
+    },
+    {
+      "resource": "Connection",
+      "key": "4f6e8002-9f44-474c-83ea-dfeb5c8e78ab",
+      "id": "Connection4f6e8002-9f44-474c-83ea-dfeb5c8e78ab",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "5dbf2098-65e6-47ae-9b6d-b1222ee5a19e",
+          "isExpression": false,
+          "displayName": "uipath-http-webhook connection"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Trigger 1",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "uipath-http-webhook connection",
+        "UseConnectionService": "true",
+        "Connector": "uipath-http-webhook"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/Solution 4.SendWhatsApp",
+      "id": "processShared/Solution 4.SendWhatsApp",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/Solution 4",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "SendWhatsApp",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "SendWhatsApp_AskMissing",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/Solution 4.ResetConversation",
+      "id": "processShared/Solution 4.ResetConversation",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/Solution 4",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "ResetConversation",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "ResetConversation",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "=bindings.boddYGX4z.WaitForReply",
+      "id": "process=bindings.boddYGX4z.WaitForReply",
+      "value": {
+        "folderPath": {
+          "defaultValue": "=bindings.boddYGX4z",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "WaitForReply",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "WaitForReply 1",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "=bindings.bkZSPEdrF.LogConversation",
+      "id": "process=bindings.bkZSPEdrF.LogConversation",
+      "value": {
+        "folderPath": {
+          "defaultValue": "=bindings.bkZSPEdrF",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "LogConversation",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "LogConversation",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "=bindings.bFBK3ITpt.WritePerception",
+      "id": "process=bindings.bFBK3ITpt.WritePerception",
+      "value": {
+        "folderPath": {
+          "defaultValue": "=bindings.bFBK3ITpt",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "WritePerception",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "WritePerception",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "foreman-downloadandsave.api.DownloadAndSaveMedia",
+      "id": "processforeman-downloadandsave.api.DownloadAndSaveMedia",
+      "value": {
+        "name": {
+          "defaultValue": "foreman-downloadandsave.api.DownloadAndSaveMedia",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "DownloadAndSaveMedia 1",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Api"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/Solution 4.sendwhatsappmedia",
+      "id": "processShared/Solution 4.sendwhatsappmedia",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/Solution 4",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "sendwhatsappmedia",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "sendwhatsappmedia",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "app",
+      "key": "SimpleApprovalApp",
+      "id": "appSimpleApprovalApp",
+      "value": {
+        "name": {
+          "defaultValue": "SimpleApprovalApp",
+          "isExpression": false,
+          "displayName": "App name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "SimpleApprovalApp",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/foremen v1.foreman-intake-v1",
+      "id": "processShared/foremen v1.foreman-intake-v1",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/foremen v1",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "foreman-intake-v1",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "foreman-intake-v1",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/foremen v1.foreman-supervisor-v4",
+      "id": "processShared/foremen v1.foreman-supervisor-v4",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/foremen v1",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "foreman-supervisor-v4",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "foreman-supervisor-v4",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/foremen v1.foreman-email-v1",
+      "id": "processShared/foremen v1.foreman-email-v1",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/foremen v1",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "foreman-email-v1",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "foreman-email-v1",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/foremen v1.foreman-vision-v4",
+      "id": "processShared/foremen v1.foreman-vision-v4",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/foremen v1",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "foreman-vision-v4",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "foreman-vision-v4",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Shared/foremen v1.foreman-voice-v3",
+      "id": "processShared/foremen v1.foreman-voice-v3",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Shared/foremen v1",
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "foreman-voice-v3",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "foreman-voice-v3",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    }
+  ]
+}

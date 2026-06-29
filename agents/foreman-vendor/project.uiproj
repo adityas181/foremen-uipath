@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "foreman-vendor",
+  "Description": "foreman-vendor",
+  "MainFile": null
+}

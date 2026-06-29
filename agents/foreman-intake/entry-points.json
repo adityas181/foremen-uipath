@@ -1,0 +1,128 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "01683d6f-5320-41cd-8f8c-b7309e5291d5",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "latest_message": {
+                        "default": "",
+                        "description": "Newest worker message (may be empty if media-only)",
+                        "title": "Latest Message",
+                        "type": "string"
+                    },
+                    "has_media": {
+                        "default": false,
+                        "description": "True if a photo/video has arrived so far",
+                        "title": "Has Media",
+                        "type": "boolean"
+                    },
+                    "current_issue_text": {
+                        "default": "",
+                        "description": "Issue gathered so far (carried forward)",
+                        "title": "Current Issue Text",
+                        "type": "string"
+                    },
+                    "current_asset_id": {
+                        "default": "",
+                        "description": "Validated asset gathered so far (carried forward)",
+                        "title": "Current Asset Id",
+                        "type": "string"
+                    },
+                    "caseId": {
+                        "default": "",
+                        "description": "FOREMAN case id (the case's external key). Routing key for the live UI feed; map this to the Maestro Case ID expression. Optional.",
+                        "title": "Caseid",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "complete": {
+                        "default": false,
+                        "title": "Complete",
+                        "type": "boolean"
+                    },
+                    "issue_text": {
+                        "default": "",
+                        "title": "Issue Text",
+                        "type": "string"
+                    },
+                    "asset_id": {
+                        "default": "",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "site_id": {
+                        "default": "",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "asset_verified": {
+                        "default": false,
+                        "title": "Asset Verified",
+                        "type": "boolean"
+                    },
+                    "missing": {
+                        "default": [],
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Missing",
+                        "type": "array"
+                    },
+                    "reply_message": {
+                        "default": "",
+                        "title": "Reply Message",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "intake",
+                        "name": "intake",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "intake",
+                        "label": null
+                    },
+                    {
+                        "source": "intake",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

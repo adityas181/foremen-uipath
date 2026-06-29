@@ -1,0 +1,134 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "7f0ccd68-2ae1-4017-87b0-6f6681da9737",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "fault_type": {
+                        "default": "",
+                        "description": "e.g. 'exposed_wiring'",
+                        "title": "Fault Type",
+                        "type": "string"
+                    },
+                    "component": {
+                        "default": "",
+                        "description": "e.g. 'MC4 connector'",
+                        "title": "Component",
+                        "type": "string"
+                    },
+                    "severity": {
+                        "default": "",
+                        "description": "low | medium | high | critical",
+                        "title": "Severity",
+                        "type": "string"
+                    },
+                    "equipment_class": {
+                        "default": "",
+                        "description": "e.g. 'pv_array'",
+                        "title": "Equipment Class",
+                        "type": "string"
+                    },
+                    "skill_hit": {
+                        "type": "string"
+                    },
+                    "engine_safety": {
+                        "default": "",
+                        "description": "upstream safety call: 'critical' | 'normal'",
+                        "title": "Engine Safety",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "safety_critical": {
+                        "default": false,
+                        "title": "Safety Critical",
+                        "type": "boolean"
+                    },
+                    "protocol": {
+                        "default": "",
+                        "title": "Protocol",
+                        "type": "string"
+                    },
+                    "standard_clause": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Standard Clause",
+                        "type": "array"
+                    },
+                    "blockers": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Blockers",
+                        "type": "array"
+                    },
+                    "citations": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Citations",
+                        "type": "array"
+                    },
+                    "can_block_auto_resolve": {
+                        "default": false,
+                        "title": "Can Block Auto Resolve",
+                        "type": "boolean"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "assess",
+                        "name": "assess",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "assess",
+                        "label": null
+                    },
+                    {
+                        "source": "assess",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "v3l0b5PrTkafmYI3nemPO3vJX09ltVn3nX9evyOjW0",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [],
+  "discardedAssemblyReplacements": {
+    "DataService.g5a2TH7M3gg": "DataService.DataService.Entities"
+  },
+  "assembliesJitInfo": {
+    "DataService.g5a2TH7M3gg": {
+      "createdAt": "2026-06-17T20:09:58.7949205+05:30",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "InboundMessage",
+        "SystemUser",
+        "UserType"
+      ]
+    },
+    "DataService.DataService.Entities": {
+      "createdAt": "2026-06-17T16:24:36.8621616+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "InboundMessage",
+        "SystemUser",
+        "UserType"
+      ]
+    }
+  }
+}

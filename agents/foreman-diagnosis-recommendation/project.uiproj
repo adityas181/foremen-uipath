@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "foreman-diagnosis-recommendation",
+  "Description": "foreman-diagnosis-recommendation",
+  "MainFile": null
+}

@@ -1,0 +1,16 @@
+{
+   "to_number": "+919816344530",
+ "summary": "Diagnosis: Mechanical failure causing a loose crimp and exposed copper strands leading to a high-resistance joint and potential thermal runaway.. Recommended fix: 1. Immediately isolate the affected string by opening the DC isolator under no load and apply lockout/tagout.\n2. Cut out and replace both halves of the damaged MC4 connector with matched, genuine connectors per installation specification.\n3. Perform an IR thermal scan on adjacent connectors and the combiner box to identify any other potential hotspots.\n4. Root-cause analysis to determine if the failure was due to poor crimp, cross-mating, or water ingress.\n5. Audit the array for similar defects and conduct a fleet-wide review if cross-mating is found.\n6. Do not reuse the damaged connector or mix connector brands.\n7. Follow all safety protocols including use of arc-rated PPE and insulated tools.. Risk is CRITICAL (score 84). Auto-resolve is BLOCKED — a human safety gate is required. NOTE: this RECURRED after a prior repair (Replaced male/female MC4 pair, re-crimped conductors, applied dielectric grease, torque-checked.) — a fleet audit and a crew/process review matter, not just a re-fix. Fleet exposure: 3 sibling asset(s) at risk. Plan: 1) SAFETY: ISOLATE & MAKE SAFE FIRST — 1. Isolate the affected PV string by opening the DC isolator under NO LOAD conditions to prevent DC arcing.\n2. Apply lockout/tagout (LOTO) to ensure the circuit remains de-energised during work.\n3. Confirm the string is de-energised using a meter rated for the system DC voltage (up to 1500 V).\n4. Only after confirming de-energisation, proceed to cut out and replace both mating MC4 connectors with matched genuine pairs, re-crimped to specification.\n5. Perform an IR thermal scan of adjacent connectors and the combiner box to detect any further defects.\n6. Audit the array for cross-mated connectors or other systemic defects as part of fleet review. | 2) SAFETY: Clear safety blocker before work: Confirm de-energised at system DC voltage with a rated meter | 3) SAFETY: Clear safety blocker before work: No work in wet conditions | 4) SAFETY: Clear safety blocker before work: Do not separate or cut connectors under load | 5) SAFETY: Clear safety blocker before work: Replace both halves of the connector pair with matched genuine connectors | 6) PARTS: Parts in stock at DEL-warehouse — pull for the job | 7) CREW: Dispatch crew CREW-PV-W (certified); ETA 27 min via 25.9 km by road | 8) WINDOW: Schedule into earliest safe window 2026-06-25 14:30 IST; access constraints ['outdoor ground mount environment', 'exposed outdoor / ground-mount site — weather-gated access'] | 9) FLEET AUDIT: Audit 3 at-risk sibling asset(s) sharing batch/crew/lot: ['AST-SCB-DEL-0788', 'AST-SCB-DEL-0791', 'AST-SCB-DEL-0802'] — Systemic - 3 assets share the same crew/lot/batch and are at risk; escalate a fleet review and pre-empt them.",
+  "to_role": "the manager",
+  "asset_id": "AST-SCB-DEL-0788",
+  "site_id": "DEL-0788",
+  "title": "Voice escalation",
+  "message_override": "",
+  "voice": "Polly.Aditi",
+  "wait_for_decision": true,
+  "timeout_sec": 75,
+  "from_number": "",
+  "language": "en-EN",
+  "case_id": "whatsapp:+917225865778",
+  "dry_run": false
+}

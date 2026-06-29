@@ -1,0 +1,11 @@
+site_id,environment,humidity,status,lat,lon
+BLR-0119,outdoor_rooftop,52,open,,
+DEL-0556,indoor,44,open,28.6139,77.209
+MUM-0345,coastal,84,open,19.076,72.8777
+DEL-0623,outdoor_rooftop,33,open,28.6139,77.209
+DEL-0802,outdoor_ground_mount,36,open,28.4595,77.0266
+DEL-0791,outdoor_ground_mount,41,open,28.5355,77.391
+DEL-0788,outdoor_ground_mount,38,open,28.6139,77.209
+MUM-0210,costal,82,open,19.076,72.8777
+DEL-0473,coastal,85,open,28.6139,77.209
+DEL-0512,indoor,45,open,28.6139,77.209

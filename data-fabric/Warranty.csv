@@ -1,0 +1,3 @@
+warranty_id,asset_id,window_days,status,liable
+WR-7781,AST-RF-DEL-0473,90,active,per_warranty
+WR-9920,AST-PDU-DEL-0512,365,active,per_warranty

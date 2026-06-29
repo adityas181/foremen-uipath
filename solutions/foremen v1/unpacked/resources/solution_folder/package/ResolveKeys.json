@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "ResolveKeys",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "14ef43bb-30a9-4912-aced-8997ce14b708",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "ResolveKeys",
+      "description": null
+    },
+    "locks": [],
+    "key": "5aa07b4a-c032-4772-a499-5faa20e83681"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "SQ695B9ozGcExZtygElJx6qVud9WJIuIvCEpKkLV86I",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [
+    "DataService.gfFbrIgvN3gg"
+  ],
+  "discardedAssemblyReplacements": {
+    "DataService.gfFbrIgvN3gg": "DataService.DataService.Entities",
+    "DataService.gbRlU1KzT3gg": "DataService.DataService.Entities"
+  },
+  "assembliesJitInfo": {
+    "CEB5C8E78AB_HTTP_WEB.OXrLB2T6m8F1F4DrE1l2x2": {
+      "createdAt": "2026-06-18T11:59:45.878094+05:30",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.CEB5C8E78AB_HTTP_WEBHOOK_Trigger.Bundle",
+      "typeNames": [
+        "HTTP_WEBHOOK_Trigger"
+      ]
+    },
+    "C91766F72F0_HTTP_WEB.NMNZC3BtsFR1cyD7P4iQ8gK4": {
+      "createdAt": "2026-06-18T12:00:25.323758+05:30",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C91766F72F0_HTTP_WEBHOOK_Trigger.Bundle",
+      "typeNames": [
+        "HTTP_WEBHOOK_Trigger"
+      ]
+    },
+    "DeserializeJSONcb920.wtglN2OqyFK1JcxGZ3qyzg93": {
+      "createdAt": "2026-06-18T12:09:58.64512+05:30",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSONcb9205.Bundle",
+      "typeNames": [
+        "DeserializeJSONcb9205"
+      ]
+    },
+    "DeserializeJSONf3758.RAxLIrxwdP1S3rDe1xa2WC2": {
+      "createdAt": "2026-06-18T12:16:04.4157224+05:30",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSONf3758d.Bundle",
+      "typeNames": [
+        "DeserializeJSONf3758d"
+      ]
+    },
+    "DataService.gfFbrIgvN3gg": {
+      "createdAt": "2026-06-18T07:28:05.061033+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "Conversation",
+        "SystemUser",
+        "UserType"
+      ]
+    },
+    "DataService.gTJPA8QvN3gg": {
+      "createdAt": "2026-06-18T07:33:51.7687114+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "Conversation",
+        "InboundMessage",
+        "SystemUser",
+        "UserType"
+      ]
+    },
+    "DeserializeJSON3fbd3.gxQ3ZUdsSO1GmxF91hswzt3": {
+      "createdAt": "2026-06-18T14:53:59.8278034+05:30",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSON3fbd3f.Bundle",
+      "typeNames": [
+        "DeserializeJSON3fbd3f"
+      ]
+    },
+    "C609EECB079_HTTP_WEB.eK8963ctPFF17IOKE3UTAni1": {
+      "createdAt": "2026-06-22T15:25:58.3955407+00:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C609EECB079_HTTP_WEBHOOK_Trigger.Bundle",
+      "typeNames": [
+        "HTTP_WEBHOOK_Trigger"
+      ]
+    },
+    "CC187622772_HTTP_WEB.E7LCT3sI5vD1h3gl918hMLx": {
+      "createdAt": "2026-06-26T17:50:07.5643645+00:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.CC187622772_HTTP_WEBHOOK_Trigger.Bundle",
+      "typeNames": [
+        "HTTP_WEBHOOK_Trigger"
+      ]
+    },
+    "DataService.gbRlU1KzT3gg": {
+      "createdAt": "2026-06-26T18:00:38.6595807+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "InboundMessage",
+        "Conversation",
+        "SystemUser",
+        "UserType"
+      ]
+    },
+    "C5457E6A201_HTTP_WEB.LI7Su2RY16S1zalxD1S5are1": {
+      "createdAt": "2026-06-26T18:37:00.480325+00:00",
+      "providerName": "CustomEntities",
+      "rootNamespace": "UiPath.IntegrationService.Activities.SWEntities.C5457E6A201_HTTP_WEBHOOK_Trigger.Bundle",
+      "typeNames": [
+        "HTTP_WEBHOOK_Trigger"
+      ]
+    },
+    "DataService.DataService.Entities": {
+      "createdAt": "2026-06-28T16:30:31.2673194+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "InboundMessage",
+        "Conversation",
+        "SystemUser",
+        "UserType"
+      ]
+    }
+  }
+}

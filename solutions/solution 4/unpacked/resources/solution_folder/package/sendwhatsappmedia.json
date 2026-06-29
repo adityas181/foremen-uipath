@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "sendwhatsappmedia",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "a9be8076-426a-40ff-a6dc-cb1970d73a5e",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "sendwhatsappmedia",
+      "description": null
+    },
+    "locks": [],
+    "key": "39edfae2-ec53-43ac-ada7-3c34a9329064"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "LogConversation",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "c3442f29-04fa-4064-b41d-1618f34541c4",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "LogConversation",
+      "description": null
+    },
+    "locks": [],
+    "key": "132a5ac1-ccde-4b72-9a95-8e2df3f1a091"
+  }
+}

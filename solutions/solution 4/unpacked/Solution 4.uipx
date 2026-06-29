@@ -1,0 +1,28 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "f6ea840b-8fe4-4922-a881-08decb8462ec",
+  "Projects": [
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "RPA Workflow/project.uiproj",
+      "Id": "ea6d47cf-7a75-4445-86c1-f2296414f0f3"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "SendWhatsApp/project.uiproj",
+      "Id": "c6d107d1-1ac6-442d-8ef1-4022ccf572ab"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "sendwhatsappmedia/project.uiproj",
+      "Id": "a9be8076-426a-40ff-a6dc-cb1970d73a5e"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "ResetConversation/project.uiproj",
+      "Id": "c5e573e8-5f52-449b-ae33-835b6fbd3042"
+    }
+  ],
+  "AutomationHubIdeaUrl": null
+}

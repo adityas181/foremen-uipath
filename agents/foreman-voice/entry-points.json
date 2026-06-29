@@ -1,0 +1,218 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "b6801b1c-b6b8-4848-9ed9-6c1f2f98f82b",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "to_number": {
+                        "default": "",
+                        "description": "Callee E.164, verified on Twilio trial",
+                        "title": "To Number",
+                        "type": "string"
+                    },
+                    "summary": {
+                        "default": "",
+                        "description": "Full case summary (long) -> LLM compresses + derives",
+                        "title": "Summary",
+                        "type": "string"
+                    },
+                    "to_role": {
+                        "default": "the manager",
+                        "description": "Who is being called, for context",
+                        "title": "To Role",
+                        "type": "string"
+                    },
+                    "asset_id": {
+                        "default": "",
+                        "description": "Asset id to lead the opener with, e.g. AST-SCB-DEL-0788",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "site_id": {
+                        "default": "",
+                        "description": "Site id (fallback id for the opener), for context",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "title": {
+                        "default": "Voice escalation",
+                        "description": "Subject of the call, for context",
+                        "title": "Title",
+                        "type": "string"
+                    },
+                    "message_override": {
+                        "default": "",
+                        "description": "If set, speak this opener verbatim and SKIP the opener LLM",
+                        "title": "Message Override",
+                        "type": "string"
+                    },
+                    "voice": {
+                        "default": "alice",
+                        "description": "Twilio <Say> voice (alice/man/woman or Polly.*)",
+                        "title": "Voice",
+                        "type": "string"
+                    },
+                    "wait_for_decision": {
+                        "default": true,
+                        "title": "Wait For Decision",
+                        "type": "boolean"
+                    },
+                    "timeout_sec": {
+                        "default": 75,
+                        "title": "Timeout Sec",
+                        "type": "integer"
+                    },
+                    "from_number": {
+                        "default": "",
+                        "description": "Twilio VOICE number (NOT the WhatsApp sandbox)",
+                        "title": "From Number",
+                        "type": "string"
+                    },
+                    "language": {
+                        "default": "en-IN",
+                        "title": "Language",
+                        "type": "string"
+                    },
+                    "case_id": {
+                        "default": "",
+                        "title": "Case Id",
+                        "type": "string"
+                    },
+                    "dry_run": {
+                        "default": false,
+                        "title": "Dry Run",
+                        "type": "boolean"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "placed": {
+                        "default": false,
+                        "title": "Placed",
+                        "type": "boolean"
+                    },
+                    "two_way": {
+                        "default": false,
+                        "title": "Two Way",
+                        "type": "boolean"
+                    },
+                    "call_sid": {
+                        "default": "",
+                        "title": "Call Sid",
+                        "type": "string"
+                    },
+                    "status": {
+                        "default": "",
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "spoken_opener": {
+                        "default": "",
+                        "title": "Spoken Opener",
+                        "type": "string"
+                    },
+                    "spoken_recommendation": {
+                        "default": "",
+                        "title": "Spoken Recommendation",
+                        "type": "string"
+                    },
+                    "decision": {
+                        "default": "pending",
+                        "title": "Decision",
+                        "type": "string"
+                    },
+                    "to": {
+                        "default": "",
+                        "title": "To",
+                        "type": "string"
+                    },
+                    "from_": {
+                        "default": "",
+                        "title": "From",
+                        "type": "string"
+                    },
+                    "transcript": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Transcript",
+                        "type": "array"
+                    },
+                    "recording_url": {
+                        "default": "",
+                        "title": "Recording Url",
+                        "type": "string"
+                    },
+                    "webhook_url": {
+                        "default": "",
+                        "title": "Webhook Url",
+                        "type": "string"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "make_brief",
+                        "name": "make_brief",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "place_call",
+                        "name": "place_call",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "make_brief",
+                        "label": null
+                    },
+                    {
+                        "source": "make_brief",
+                        "target": "place_call",
+                        "label": null
+                    },
+                    {
+                        "source": "place_call",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

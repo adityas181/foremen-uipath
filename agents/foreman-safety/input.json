@@ -1,0 +1,8 @@
+{
+  "fault_type": "exposed_wiring",
+  "component": "MC4 connector",
+  "severity": "high",
+  "equipment_class": "pv_array",
+  "skill_hit": "SK-pv-mc4-connector-burn",
+  "engine_safety": "critical"
+}

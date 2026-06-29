@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Foreman-Dispatcher",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "9b4f520b-03ea-428f-a584-2c9b743554fa",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "Foreman-Dispatcher",
+      "description": null
+    },
+    "locks": [],
+    "key": "8a5bb1a7-4a46-448d-b04b-e16b80c097e2"
+  }
+}

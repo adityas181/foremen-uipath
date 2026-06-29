@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:de="clr-namespace:DataService.Entities;assembly=DataService.DataService.Entities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CEB5C8E78AB_HTTP_WEBHOOK_Trigger.Bundle;assembly=CEB5C8E78AB_HTTP_WEB.OXrLB2T6m8F1F4DrE1l2x2" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwavsdb="clr-namespace:UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSON3fbd3f.Bundle;assembly=DeserializeJSON3fbd3.gxQ3ZUdsSO1GmxF91hswzt3" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Text.Json.Nodes</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CEB5C8E78AB_HTTP_WEBHOOK_Trigger.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C91766F72F0_HTTP_WEBHOOK_Trigger.Bundle</x:String>
+      <x:String>UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSONcb9205.Bundle</x:String>
+      <x:String>UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSONf3758d.Bundle</x:String>
+      <x:String>DataService.Entities</x:String>
+      <x:String>UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSON3fbd3f.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C609EECB079_HTTP_WEBHOOK_Trigger.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CC187622772_HTTP_WEBHOOK_Trigger.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C5457E6A201_HTTP_WEBHOOK_Trigger.Bundle</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>C5457E6A201_HTTP_WEB.LI7Su2RY16S1zalxD1S5are1</AssemblyReference>
+      <AssemblyReference>DataService.DataService.Entities</AssemblyReference>
+      <AssemblyReference>CC187622772_HTTP_WEB.E7LCT3sI5vD1h3gl918hMLx</AssemblyReference>
+      <AssemblyReference>C609EECB079_HTTP_WEB.eK8963ctPFF17IOKE3UTAni1</AssemblyReference>
+      <AssemblyReference>DeserializeJSON3fbd3.gxQ3ZUdsSO1GmxF91hswzt3</AssemblyReference>
+      <AssemblyReference>DeserializeJSONf3758.RAxLIrxwdP1S3rDe1xa2WC2</AssemblyReference>
+      <AssemblyReference>DeserializeJSONcb920.wtglN2OqyFK1JcxGZ3qyzg93</AssemblyReference>
+      <AssemblyReference>C91766F72F0_HTTP_WEB.NMNZC3BtsFR1cyD7P4iQ8gK4</AssemblyReference>
+      <AssemblyReference>CEB5C8E78AB_HTTP_WEB.OXrLB2T6m8F1F4DrE1l2x2</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Annotations</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="uiascb:HTTP_WEBHOOK_Trigger" Default="[new UiPath.IntegrationService.Activities.SWEntities.CEB5C8E78AB_HTTP_WEBHOOK_Trigger.Bundle.HTTP_WEBHOOK_Trigger]" Name="_event">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorTriggerActivity_1</x:String>
+            <x:String x:Key="SourcePropertyName">_Event</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="strippedPhone" />
+      <Variable x:TypeArguments="x:Boolean" Default="[False]" Name="claimed" />
+      <Variable x:TypeArguments="uwavsdb:DeserializeJSON3fbd3f" Default="[new UiPath.Web.Activities.ViewModels.SWEntities.DeserializeJSON3fbd3f.Bundle.DeserializeJSON3fbd3f]" Name="jsonObject" />
+      <Variable x:TypeArguments="x:String" Name="raw" />
+      <Variable x:TypeArguments="de:Conversation" Default="[new DataService.Entities.Conversation]" Name="convRecord" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <isactr:ConnectorTriggerActivity Configuration="H4sIAAAAAAAAA51Va2/iRhT9K5Y/tRK2wbycSPmwPFJoIKBAEprdFRrbF5hlmHHmwYaN8t97xxjCtknbVEiWuXfmPs499/jZ7UBslh2qSMwgdc+1NFBye0RNNNE0GcBCjzKQhKeXlGmQLUNZCvJw8JICS1VbcE0ot+Znt7sFrvd29/zzs3uNcbYw3WXgnrtKS8qXbskdyTxKpYT+jfVIeDSg9DwW6Q79HVCJpJmmgqPzZu90rNMRC0evwAGbx1H2oYXzHeKVEGsHeJoJyrUNQVXGyK6I39rH/WsdE7LJGNwRZqzZfSl9uOAVEPSod2su/P+z7N4x+r9V/rXk9nlmXqFHw8joU8vzofZ8Rn/LdbT+1Mdr6ls6Jnrl97mGpSTWPQG5pQn4nxKEjGoKyp/cd7nev7a7rXo76jajT615bzodz++7rd5odDWfSrpcgvRbhqcM/Ld8Jeet2/5oJgetcNrYRJeVy1pHdissfApLzh1ihPVcVPyy/eFtw7SRcMHBaElYyRmbmNHkCnZTsQZ+wQ1j2FkxJPd8QZg68HkgElI0vwcQD/bV73QP5IH6fTVEzt+AygRXcOLac+gVUaffeRvqwvEO2pOd0rDxJ/m8S07xdyzplmjw20LCgMavnUf/tfNmAklUT5sxkGbzLIKPofBez19fSm5bbGJUgUIpuk+ZBKWObY0FY9iJZY/cEtbnQ8qNBuRl3V7lHBKbTg2o0reS4aWV1pk6DwKlyRJv+oZmln+J2AQrkqzxXfCwMa/Vm0EKC4J9a+CE60DIZIX9IEeFnAfJa2zbAsdwPIExkTgKbXcLRatAEZPmDHKPFQmJwKF5n9uzJXnF0uKhgve7YmRtgykhLShsRSP+hjEOq3xCc/TlFMi1tUD5t+5196bfPriGIrW37vfJFEqTa0fC6A9ID3lPIjv3x6raBNvH+Ym1yXJ9sC2+HOwtKb4rkH1kU2FHTm2I3GGjhWyMLbpLOAUlbPplLwZN/LAcNsqNSsMPT1F6p5KD+zRU3Y+O0LwtQP8E20QwYwFDEgojE+gjA11SDpuVqB55UVIre7VaEnpRo173SPWs0mw0Fs1wYWc6IHxpsDG8AdzNP3MtCWSN5Gqv0GeBKlZgCk+6xUSy/kk3C5oNkdc2zP6YHbzIdg5+I3OFzwhuav52UPfbm4GD4i6cHZbskCzDfcyn7jufB0Akdza4zl9/ORA+FYk6ZTt9VVxP7SU3IEaLzd6UMGHSgCH1lA4MHvCWhqYQvMFZzyhs1sPijpbkMKNf/S/8C//A0kVxFKd1hDlM8FGrVMGLqnHdg0Y1bpRr1fAsTANgsMGpqnmwrQRFThXkX0EVzHZDAdldudvk9V339royabdn367+mC1vhqu7u8cx59XQTK92dNaPHiq1CkyeepNkIh9JJ2zd1R745UN0DfBA1azf6zzS9bieLXOxUbRYq6nI8OP48ie1WeFO6ggAAA==" ConnectionId="fe7a36ed-1325-4b43-bfdd-21609eecb079" DisplayName="HTTP Webhook" sap2010:WorkflowViewState.IdRef="ConnectorTriggerActivity_1" UiPathActivityTypeId="773cab30-51dc-3eb4-b19d-720dfa151cc9" UiPathAdditionalEventData="[UiPathAdditionalEventData]" UiPathEvent="[UiPathEvent]" UiPathEventConnector="[UiPathEventConnector]" UiPathEventObjectId="[UiPathEventObjectId]" UiPathEventObjectType="[UiPathEventObjectType]">
+      <isactr:ConnectorTriggerActivity.FieldObjects>
+        <isactr:FieldObject Name="_Event" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:HTTP_WEBHOOK_Trigger">[_event]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_Event_20_ID" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorTriggerActivity.FieldObjects>
+    </isactr:ConnectorTriggerActivity>
+    <ui:DeserializeJson x:TypeArguments="uwavsdb:DeserializeJSON3fbd3f" Settings="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" DisplayName="Deserialize JSON" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jsonObject]" JsonSample="{}{&quot;from&quot;:&quot;whatsapp:+917225865778&quot;,&quot;body&quot;:&quot;compressor leaking&quot;,&quot;mediaUrl&quot;:&quot;&quot;,&quot;messageSid&quot;:&quot;SM123&quot;}" JsonString="[string.Format(&quot;{0}&quot;, _event.request_body)]" />
+    <Assign DisplayName="Assign A" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[raw]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[string.Format("{0}", jsonObject.from)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign B" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strippedPhone]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[raw.Replace("whatsapp:", "")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[string.Format(&quot;{0}&quot;, strippedPhone)]" />
+    <TryCatch DisplayName="Try Catch" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <uda:CreateEntityRecord x:TypeArguments="de:Conversation" InputEntity="{x:Null}" IsInRecordView="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="b1fab99f-506a-f111-8fcb-000d3ab36606" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.Conversation() With {  .phone = string.Format(&quot;{0}&quot;, strippedPhone),  .status = &quot;starting&quot; }]" OutputEntity="[convRecord]" TimeoutInMs="30000">
+            <uda:CreateEntityRecord.State>
+              <udam:RecordState>
+                <udam:RecordState.SelectedFields>
+                  <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="3">
+                    <udam:DynamicEntityField Id="bdfab99f-506a-f111-8fcb-000d3ab36606" Name="caseId" />
+                    <udam:DynamicEntityField Id="bbfab99f-506a-f111-8fcb-000d3ab36606" Name="phone">
+                      <udam:DynamicEntityField.ArgumentValue>
+                        <InArgument x:TypeArguments="x:String">[string.Format("{0}", strippedPhone)]</InArgument>
+                      </udam:DynamicEntityField.ArgumentValue>
+                    </udam:DynamicEntityField>
+                    <udam:DynamicEntityField Id="bcfab99f-506a-f111-8fcb-000d3ab36606" Name="status">
+                      <udam:DynamicEntityField.ArgumentValue>
+                        <InArgument x:TypeArguments="x:String">starting</InArgument>
+                      </udam:DynamicEntityField.ArgumentValue>
+                    </udam:DynamicEntityField>
+                  </scg:List>
+                </udam:RecordState.SelectedFields>
+              </udam:RecordState>
+            </uda:CreateEntityRecord.State>
+          </uda:CreateEntityRecord>
+          <Assign DisplayName="Assign 1" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[claimed]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <uda:CreateEntityRecord x:TypeArguments="de:InboundMessage" InputEntity="{x:Null}" OutputEntity="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record 1" EntityId="3b89c7fc-506a-f111-8fcb-000d3ab36606" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_3" InputEntityInFieldView="[new DataService.Entities.InboundMessage() With {  .mediaUrl = string.Format(&quot;{0}&quot;, jsonObject.mediaUrl),  .messageSid = string.Format(&quot;{0}&quot;, jsonObject.messageSid),  .phone = string.Format(&quot;{0}&quot;, strippedPhone),  .processed = false,  .text = string.Format(&quot;{0}&quot;, jsonObject.body),  .timestamp = DateTime.UtcNow }]" IsInRecordView="False" TimeoutInMs="30000">
+                <uda:CreateEntityRecord.State>
+                  <udam:RecordState>
+                    <udam:RecordState.SelectedFields>
+                      <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="6">
+                        <udam:DynamicEntityField Id="4789c7fc-506a-f111-8fcb-000d3ab36606" Name="mediaUrl">
+                          <udam:DynamicEntityField.ArgumentValue>
+                            <InArgument x:TypeArguments="x:String">[string.Format("{0}", jsonObject.mediaUrl)]</InArgument>
+                          </udam:DynamicEntityField.ArgumentValue>
+                        </udam:DynamicEntityField>
+                        <udam:DynamicEntityField Id="4889c7fc-506a-f111-8fcb-000d3ab36606" Name="messageSid">
+                          <udam:DynamicEntityField.ArgumentValue>
+                            <InArgument x:TypeArguments="x:String">[string.Format("{0}", jsonObject.messageSid)]</InArgument>
+                          </udam:DynamicEntityField.ArgumentValue>
+                        </udam:DynamicEntityField>
+                        <udam:DynamicEntityField Id="4589c7fc-506a-f111-8fcb-000d3ab36606" Name="phone">
+                          <udam:DynamicEntityField.ArgumentValue>
+                            <InArgument x:TypeArguments="x:String">[string.Format("{0}", strippedPhone)]</InArgument>
+                          </udam:DynamicEntityField.ArgumentValue>
+                        </udam:DynamicEntityField>
+                        <udam:DynamicEntityField Id="4989c7fc-506a-f111-8fcb-000d3ab36606" Name="processed">
+                          <udam:DynamicEntityField.ArgumentValue>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </udam:DynamicEntityField.ArgumentValue>
+                        </udam:DynamicEntityField>
+                        <udam:DynamicEntityField Id="4689c7fc-506a-f111-8fcb-000d3ab36606" Name="text">
+                          <udam:DynamicEntityField.ArgumentValue>
+                            <InArgument x:TypeArguments="x:String">[string.Format("{0}", jsonObject.body)]</InArgument>
+                          </udam:DynamicEntityField.ArgumentValue>
+                        </udam:DynamicEntityField>
+                        <udam:DynamicEntityField Id="4a89c7fc-506a-f111-8fcb-000d3ab36606" Name="timestamp">
+                          <udam:DynamicEntityField.ArgumentValue>
+                            <InArgument x:TypeArguments="s:DateTimeOffset">[DateTime.UtcNow]</InArgument>
+                          </udam:DynamicEntityField.ArgumentValue>
+                        </udam:DynamicEntityField>
+                      </scg:List>
+                    </udam:RecordState.SelectedFields>
+                  </udam:RecordState>
+                </uda:CreateEntityRecord.State>
+              </uda:CreateEntityRecord>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3" />
+      </TryCatch.Finally>
+    </TryCatch>
+    <If Condition="[claimed = true]" DisplayName="If" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA; New FileFormDataPart(),&#xA; New BinaryFormDataPart(),&#xA; New TextFormDataPart()&#xA;}]" Headers="[New Dictionary(Of System.String, System.String) From { {&quot;Content-Type&quot;, &quot;application/json&quot;} }]" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="https://staging.uipath.com/hackathon26_457/8b8bd555-2c55-413e-83b5-e63b6043292d/elements_/v1/webhooks/events/BCnHZ74z9klDQT8HiEYep0YTSouFuTpsfC4THTsSCD9zQUFeuFqYihP3LVkw2MsE_ilwULPDThpt_OxX4x2VWQ" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA; System.Net.HttpStatusCode.RequestTimeout,&#xA; System.Net.HttpStatusCode.TooManyRequests,&#xA; System.Net.HttpStatusCode.InternalServerError,&#xA; System.Net.HttpStatusCode.BadGateway,&#xA; System.Net.HttpStatusCode.ServiceUnavailable,&#xA; System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[string.Format(&quot;{0}&quot;, _event.request_body)]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+            <uwah:NetHttpRequest.TimeoutInMiliseconds>
+              <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+              </InArgument>
+            </uwah:NetHttpRequest.TimeoutInMiliseconds>
+          </uwah:NetHttpRequest>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

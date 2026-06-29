@@ -1,0 +1,62 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "RPA Workflow",
+    "kind": "process",
+    "type": "process",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Solution.4.process.RPA.Workflow",
+        "kind": "Package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "Process",
+      "jobPriority": "Medium",
+      "jobRecording": "Disabled",
+      "duration": 40,
+      "frequency": 500,
+      "quality": 100,
+      "remoteControlAccess": "None",
+      "name": "RPA Workflow",
+      "description": null,
+      "package": {
+        "name": "Solution.4.process.RPA.Workflow",
+        "key": "Solution.4.process.RPA.Workflow:1.0.9"
+      },
+      "packageName": "Solution.4.process.RPA.Workflow",
+      "packageVersion": "1.0.9",
+      "entryPointUniqueId": "2ae2ddb9-6941-4dbd-bba9-bdbb527c73cd",
+      "entryPointName": "Main.xaml",
+      "inputArguments": null,
+      "inputArgumentsSchema": null,
+      "outputArgumentsSchema": null,
+      "inputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022phone\u0022: {\n      \u0022type\u0022: \u0022string\u0022,\n      \u0022x-default-expression\u0022: \u0022\\\u0022whatsapp:\u002B917225865778\\\u0022\u0022,\n      \u0022default\u0022: \u0022whatsapp:\u002B917225865778\u0022\n    }\n  },\n  \u0022required\u0022: []\n}",
+      "outputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022messages\u0022: {\n      \u0022type\u0022: \u0022array\u0022,\n      \u0022items\u0022: {\n        \u0022type\u0022: \u0022object\u0022,\n        \u0022properties\u0022: {\n          \u0022phone\u0022: {\n            \u0022type\u0022: \u0022string\u0022\n          },\n          \u0022text\u0022: {\n            \u0022type\u0022: \u0022string\u0022\n          },\n          \u0022mediaUrl\u0022: {\n            \u0022type\u0022: \u0022string\u0022\n          },\n          \u0022messageSid\u0022: {\n            \u0022type\u0022: \u0022string\u0022\n          },\n          \u0022processed\u0022: {\n            \u0022type\u0022: \u0022boolean\u0022\n          },\n          \u0022timestamp\u0022: {\n            \u0022type\u0022: \u0022string\u0022,\n            \u0022format\u0022: \u0022date-time\u0022\n          },\n          \u0022CreateTime\u0022: {\n            \u0022$ref\u0022: \u0022#/$defs/dateTimeOffset\u0022\n          },\n          \u0022UpdateTime\u0022: {\n            \u0022$ref\u0022: \u0022#/$defs/dateTimeOffset\u0022\n          },\n          \u0022Id\u0022: {\n            \u0022$ref\u0022: \u0022#/$defs/guid\u0022\n          },\n          \u0022CreatedBy\u0022: {\n            \u0022$ref\u0022: \u0022#/$defs/systemUser\u0022\n          },\n          \u0022UpdatedBy\u0022: {\n            \u0022$ref\u0022: \u0022#/$defs/systemUser\u0022\n          }\n        }\n      },\n      \u0022$defs\u0022: {\n        \u0022dateTimeOffset\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022format\u0022: \u0022date-time\u0022\n        },\n        \u0022guid\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022format\u0022: \u0022uuid\u0022\n        },\n        \u0022systemUser\u0022: {\n          \u0022type\u0022: \u0022object\u0022,\n          \u0022properties\u0022: {\n            \u0022Name\u0022: {\n              \u0022type\u0022: \u0022string\u0022\n            },\n            \u0022Id\u0022: {\n              \u0022$ref\u0022: \u0022#/$defs/guid\u0022\n            },\n            \u0022CreateTime\u0022: {\n              \u0022$ref\u0022: \u0022#/$defs/dateTimeOffset\u0022\n            },\n            \u0022UpdateTime\u0022: {\n              \u0022$ref\u0022: \u0022#/$defs/dateTimeOffset\u0022\n            },\n            \u0022Type\u0022: {\n              \u0022enum\u0022: [\n                \u0022User\u0022,\n                \u0022Group\u0022,\n                \u0022Robot\u0022,\n                \u0022Application\u0022\n              ]\n            },\n            \u0022Email\u0022: {\n              \u0022type\u0022: \u0022string\u0022\n            },\n            \u0022IsActive\u0022: {\n              \u0022type\u0022: \u0022boolean\u0022\n            }\n          }\n        }\n      }\n    }\n  }\n}",
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "retentionBucketRef": null,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "staleRetentionBucketRef": null,
+      "entryPoints": "[{\u0022UniqueId\u0022:\u00222ae2ddb9-6941-4dbd-bba9-bdbb527c73cd\u0022,\u0022Path\u0022:\u0022Main.xaml\u0022,\u0022DisplayName\u0022:null,\u0022InputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022phone\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022,\\n      \\\u0022x-default-expression\\\u0022: \\\u0022\\\\\\\u0022whatsapp:\u002B917225865778\\\\\\\u0022\\\u0022,\\n      \\\u0022default\\\u0022: \\\u0022whatsapp:\u002B917225865778\\\u0022\\n    }\\n  },\\n  \\\u0022required\\\u0022: []\\n}\u0022,\u0022OutputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022messages\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022array\\\u0022,\\n      \\\u0022items\\\u0022: {\\n        \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n        \\\u0022properties\\\u0022: {\\n          \\\u0022phone\\\u0022: {\\n            \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n          },\\n          \\\u0022text\\\u0022: {\\n            \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n          },\\n          \\\u0022mediaUrl\\\u0022: {\\n            \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n          },\\n          \\\u0022messageSid\\\u0022: {\\n            \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n          },\\n          \\\u0022processed\\\u0022: {\\n            \\\u0022type\\\u0022: \\\u0022boolean\\\u0022\\n          },\\n          \\\u0022timestamp\\\u0022: {\\n            \\\u0022type\\\u0022: \\\u0022string\\\u0022,\\n            \\\u0022format\\\u0022: \\\u0022date-time\\\u0022\\n          },\\n          \\\u0022CreateTime\\\u0022: {\\n            \\\u0022$ref\\\u0022: \\\u0022#/$defs/dateTimeOffset\\\u0022\\n          },\\n          \\\u0022UpdateTime\\\u0022: {\\n            \\\u0022$ref\\\u0022: \\\u0022#/$defs/dateTimeOffset\\\u0022\\n          },\\n          \\\u0022Id\\\u0022: {\\n            \\\u0022$ref\\\u0022: \\\u0022#/$defs/guid\\\u0022\\n          },\\n          \\\u0022CreatedBy\\\u0022: {\\n            \\\u0022$ref\\\u0022: \\\u0022#/$defs/systemUser\\\u0022\\n          },\\n          \\\u0022UpdatedBy\\\u0022: {\\n            \\\u0022$ref\\\u0022: \\\u0022#/$defs/systemUser\\\u0022\\n          }\\n        }\\n      },\\n      \\\u0022$defs\\\u0022: {\\n        \\\u0022dateTimeOffset\\\u0022: {\\n          \\\u0022type\\\u0022: \\\u0022string\\\u0022,\\n          \\\u0022format\\\u0022: \\\u0022date-time\\\u0022\\n        },\\n        \\\u0022guid\\\u0022: {\\n          \\\u0022type\\\u0022: \\\u0022string\\\u0022,\\n          \\\u0022format\\\u0022: \\\u0022uuid\\\u0022\\n        },\\n        \\\u0022systemUser\\\u0022: {\\n          \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n          \\\u0022properties\\\u0022: {\\n            \\\u0022Name\\\u0022: {\\n              \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n            },\\n            \\\u0022Id\\\u0022: {\\n              \\\u0022$ref\\\u0022: \\\u0022#/$defs/guid\\\u0022\\n            },\\n            \\\u0022CreateTime\\\u0022: {\\n              \\\u0022$ref\\\u0022: \\\u0022#/$defs/dateTimeOffset\\\u0022\\n            },\\n            \\\u0022UpdateTime\\\u0022: {\\n              \\\u0022$ref\\\u0022: \\\u0022#/$defs/dateTimeOffset\\\u0022\\n            },\\n            \\\u0022Type\\\u0022: {\\n              \\\u0022enum\\\u0022: [\\n                \\\u0022User\\\u0022,\\n                \\\u0022Group\\\u0022,\\n                \\\u0022Robot\\\u0022,\\n                \\\u0022Application\\\u0022\\n              ]\\n            },\\n            \\\u0022Email\\\u0022: {\\n              \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n            },\\n            \\\u0022IsActive\\\u0022: {\\n              \\\u0022type\\\u0022: \\\u0022boolean\\\u0022\\n            }\\n          }\\n        }\\n      }\\n    }\\n  }\\n}\u0022,\u0022Type\u0022:1,\u0022TargetRuntime\u0022:null,\u0022ContentRoot\u0022:null,\u0022DataVariation\u0022:null,\u0022Id\u0022:13889017}]",
+      "connections": null,
+      "tags": []
+    },
+    "locks": [],
+    "key": "7cfccbb6-031a-41e7-852f-7ef876d09071"
+  }
+}

@@ -1,0 +1,121 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "9745a9ed-aedf-4c69-aed2-9677787c8464",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "mediaPath": {
+                        "description": "Path/key of the media file inside the bucket",
+                        "title": "Mediapath",
+                        "type": "string"
+                    },
+                    "mediaType": {
+                        "description": "MIME type, e.g. 'image/jpeg' or 'video/mp4'",
+                        "title": "Mediatype",
+                        "type": "string"
+                    },
+                    "assetId": {
+                        "description": "Asset identifier, e.g. 'AST-SCB-DEL-0788'",
+                        "title": "Assetid",
+                        "type": "string"
+                    },
+                    "issueText": {
+                        "default": "",
+                        "description": "Worker-reported issue text from intake (optional; grounds the vision)",
+                        "title": "Issuetext",
+                        "type": "string"
+                    },
+                    "caseId": {
+                        "default": "",
+                        "description": "FOREMAN case id (the case's external key). Routing key for the live UI feed; map this to the Maestro Case ID expression. Optional.",
+                        "title": "Caseid",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "mediaPath",
+                    "mediaType",
+                    "assetId"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "issue_text_received": {
+                        "default": "",
+                        "description": "The worker-reported issue text the agent received (echoed for visibility)",
+                        "title": "Issue Text Received",
+                        "type": "string"
+                    },
+                    "perception": {
+                        "additionalProperties": true,
+                        "description": "Structured fault perception parsed from the vision model",
+                        "title": "Perception",
+                        "type": "object"
+                    },
+                    "history_match": {
+                        "additionalProperties": true,
+                        "description": "How the top fault relates to this asset's prior issue history",
+                        "title": "History Match",
+                        "type": "object"
+                    },
+                    "history_logged": {
+                        "default": false,
+                        "description": "True if a new AssetIssueHistory record was written this run",
+                        "title": "History Logged",
+                        "type": "boolean"
+                    },
+                    "history_logged_error": {
+                        "default": "",
+                        "description": "Error detail if the auto-log write failed (empty when fine)",
+                        "title": "History Logged Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "perceive",
+                        "name": "perceive",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "perceive",
+                        "label": null
+                    },
+                    {
+                        "source": "perceive",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

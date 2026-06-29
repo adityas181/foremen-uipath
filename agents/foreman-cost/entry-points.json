@@ -1,0 +1,95 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "b17f1fcc-222a-4f05-98df-dfecca2814ca",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "asset_id": {
+                        "default": "",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "fix": {
+                        "default": "",
+                        "title": "Fix",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "decision": {
+                        "default": "replace",
+                        "title": "Decision",
+                        "type": "string"
+                    },
+                    "whole_life_cost": {
+                        "default": 0.0,
+                        "title": "Whole Life Cost",
+                        "type": "number"
+                    },
+                    "capex_flag": {
+                        "default": false,
+                        "title": "Capex Flag",
+                        "type": "boolean"
+                    },
+                    "rationale": {
+                        "default": "",
+                        "title": "Rationale",
+                        "type": "string"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "cost_stub",
+                        "name": "cost_stub",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "cost_stub",
+                        "label": null
+                    },
+                    {
+                        "source": "cost_stub",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

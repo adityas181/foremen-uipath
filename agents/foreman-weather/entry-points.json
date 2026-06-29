@@ -1,0 +1,101 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "e75c4079-ec6b-44c4-a687-a01f6edab1c7",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "site_id": {
+                        "default": "",
+                        "description": "Site id, e.g. 'DEL-0788'",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "fix_kind": {
+                        "default": "",
+                        "description": "Fix descriptor, e.g. 'outdoor live-electrical DC'",
+                        "title": "Fix Kind",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "safe_window": {
+                        "default": "",
+                        "title": "Safe Window",
+                        "type": "string"
+                    },
+                    "weather_blockers": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Weather Blockers",
+                        "type": "array"
+                    },
+                    "access_constraints": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Access Constraints",
+                        "type": "array"
+                    },
+                    "earliest_safe_time": {
+                        "default": "",
+                        "title": "Earliest Safe Time",
+                        "type": "string"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "plan_weather",
+                        "name": "plan_weather",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "plan_weather",
+                        "label": null
+                    },
+                    {
+                        "source": "plan_weather",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

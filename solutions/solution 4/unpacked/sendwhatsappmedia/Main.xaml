@@ -1,0 +1,143 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.presignedUrl="https://crpabetaorch1nestg.blob.core.windows.net/orchestrator-8b8bd555-2c55-413e-83b5-e63b6043292d/BlobFilePersistence/0a90f208-4642-4c0b-848c-e2b4eaab61a3/mc4-connector-install-spec.pdf?sv=2025-07-05&amp;st=2026-06-24T22%3A31%3A47Z&amp;se=2026-06-24T22%3A52%3A17Z&amp;sr=b&amp;sp=r&amp;sig=l4QhdzNw42NkSqQwWxyNMImFK5WHEyE0mQ1F/KPm%2Bhs%3D"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="phone" Type="InArgument(x:String)" />
+    <x:Property Name="text" Type="InArgument(x:String)" />
+    <x:Property Name="from" Type="InArgument(x:String)" />
+    <x:Property Name="presignedUrl" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.phone>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.phone>
+  <this:Main.text>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.text>
+  <this:Main.from>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.from>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CA90CEF2FB5_Messages.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CA90CEF2FB5_curated_whatsapp_message.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CC47D474209_Messages.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CC47D474209_curated_whatsapp_message.Bundle</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+      <AssemblyReference>CC47D474209_curated_.gm1dp3Cf4hI1rT6XF4YuPY34</AssemblyReference>
+      <AssemblyReference>CC47D474209_Messages.AxpM72SiDrK1Fn3yP1I1HAc4</AssemblyReference>
+      <AssemblyReference>CA90CEF2FB5_curated_.2bjbR1Aaj5P1AT61h1ITG0T4</AssemblyReference>
+      <AssemblyReference>CA90CEF2FB5_Messages.aGOYj3cDkRB1YxpiUyrzV44</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="responseBody">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorHttpActivity_1</x:String>
+            <x:String x:Key="SourcePropertyName">out_body</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
+    <isactr:ConnectorHttpActivity Configuration="H4sIAAAAAAAAA+1W31PaQBD+Vzr32CGQRAnKdJxBRGWqgor2oePD5bLAaXIX74dIGf737iWB1uK0dMbpS+UBspvd/Xb3vr1lQY45pInuSmEoF6BIe0H6Irem1JP21wW5oBmQNsnATGVCauSI6zyl80p9vlKP5rmTtVFcTFC+gkfLFSSkbZSFWol0Jhk1XAo0PJTJnCxr6/hWpRvBeyLJJRfmDcJPgSag9I9IMr4H5iIfS5VRg5qEM+dM1fxTCVPjKExsBsJUmoODAlrnUmjYFvrRgpq/BfCfgGInb7bqCDSfCHe0RYBOAVaebflcOZzyBFx5NoXy7RWMC49fGbDS39LUFqbkpDcid8s7l8uLkNdTOdsqZF9/kephnMpZ7zlXoHVRYdnfTbjh4HqETsMb933UO+uNek7sjLqnRRqYyP9T67aERMOBNa/O9j8cjjKFd9a+s/bvmcJkUf5rqwA0knRMUw3bB3b9rnyHCp44zIZUIZJxo4C8q1Zbu+hdjdzggsJRMSbX7UaD5rxuZjzlss5k1gj9wPf8Xc8PGh3GpBVGNzpdFu7RnVYU+FGz2QqaPttn8XjHb8URRHHcdG09rUYP8ToW8RT/th5bqjn7cHlzcX/+sfigOQaH3M0jzfOUlyU17jXa14jb4jiNXtWfDQss97JYRe3FEp/7QhsqGLws+hZ/S/ig7tf9MqzAy0CqzzB3e5rn1Ey9snYvQyLQSXkOjldP3Mwr/BPAPxSc4YtBcZus7hps4OrEsHyU1n0eykI3yEGtetBVQA241LuUTQGPUT7YfMWzxVp/qORMg+obyCr9UPEMbytM2hES+Tak7IFO4OcCw1bd92IwtB76YeRHQVQPf5/vK7nVyLVMrdMh8aRVDPquGOrv0YjF1AMI97zdKGAeZX7gRWMIAQkQBvst9D2jYmIxLfQAd4gjeDaHqWQPRdbL79mB1kCiCQAA" ConnectionId="a08a6cba-ee28-461c-ac01-6fe2eb6e2197" DisplayName="Twilio HTTP Request" sap2010:WorkflowViewState.IdRef="ConnectorHttpActivity_1" UiPathActivityTypeId="c56e338c-11dc-3468-ad89-7e938d7ac3d9">
+      <isactr:ConnectorHttpActivity.FieldObjects>
+        <isactr:FieldObject Name="method" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">POST</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="url" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">/Messages.json</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="headers" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="query" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)">
+              <InArgument x:TypeArguments="x:String" x:Key="Content-Type">application/x-www-form-urlencoded</InArgument>
+            </scg:Dictionary>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="body" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">["To=whatsapp:%2B917225865778&amp;From=whatsapp:%2B14155238886&amp;Body=" &amp; "&amp;MediaUrl=" &amp; Uri.EscapeDataString(presignedUrl)]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_headers" Type="FieldArgument" />
+        <isactr:FieldObject Name="out_body" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[responseBody]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_code" Type="FieldArgument" />
+      </isactr:ConnectorHttpActivity.FieldObjects>
+    </isactr:ConnectorHttpActivity>
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[responseBody]" />
+  </Sequence>
+</Activity>

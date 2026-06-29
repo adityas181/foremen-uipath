@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "WritePerception",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "3ebae022-2684-4af0-a1ea-42392f2c88d6",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "WritePerception",
+      "description": null
+    },
+    "locks": [],
+    "key": "5c43b1c7-f0da-40dd-9ba1-904324338b28"
+  }
+}

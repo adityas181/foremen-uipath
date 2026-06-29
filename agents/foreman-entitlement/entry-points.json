@@ -1,0 +1,105 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "867d7677-88d7-41d0-95b8-b40961eb2991",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "asset_id": {
+                        "default": "",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "site_id": {
+                        "default": "",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "root_cause": {
+                        "default": "",
+                        "title": "Root Cause",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "vendor": {
+                        "default": "",
+                        "title": "Vendor",
+                        "type": "string"
+                    },
+                    "warranty_active": {
+                        "default": false,
+                        "title": "Warranty Active",
+                        "type": "boolean"
+                    },
+                    "vendor_liable": {
+                        "default": false,
+                        "title": "Vendor Liable",
+                        "type": "boolean"
+                    },
+                    "claim_basis": {
+                        "default": "",
+                        "title": "Claim Basis",
+                        "type": "string"
+                    },
+                    "recovery_inr": {
+                        "default": 0.0,
+                        "title": "Recovery Inr",
+                        "type": "number"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "entitlement_stub",
+                        "name": "entitlement_stub",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "entitlement_stub",
+                        "label": null
+                    },
+                    {
+                        "source": "entitlement_stub",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+tenant,contract,penalty_per_hr,response_sla_min,site_id
+Vodafone Idea,SLA-C,10000,90,DEL-0473
+Jio,SLA-B,16000,60,DEL-0473
+Airtel,SLA-A,22000,60,DEL-0473
+Airtel,SLA-D,18000,60,DEL-0512

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "2ae2ddb9-6941-4dbd-bba9-bdbb527c73cd",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "phone": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "mediaUrl": {
+                  "type": "string"
+                },
+                "messageSid": {
+                  "type": "string"
+                },
+                "processed": {
+                  "type": "boolean"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "CreateTime": {
+                  "$ref": "#/$defs/dateTimeOffset"
+                },
+                "UpdateTime": {
+                  "$ref": "#/$defs/dateTimeOffset"
+                },
+                "Id": {
+                  "$ref": "#/$defs/guid"
+                },
+                "CreatedBy": {
+                  "$ref": "#/$defs/systemUser"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/$defs/systemUser"
+                }
+              }
+            },
+            "$defs": {
+              "dateTimeOffset": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "guid": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "systemUser": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Id": {
+                    "$ref": "#/$defs/guid"
+                  },
+                  "CreateTime": {
+                    "$ref": "#/$defs/dateTimeOffset"
+                  },
+                  "UpdateTime": {
+                    "$ref": "#/$defs/dateTimeOffset"
+                  },
+                  "Type": {
+                    "enum": [
+                      "User",
+                      "Group",
+                      "Robot",
+                      "Application"
+                    ]
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "IsActive": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "$defs": {
+          "dateTimeOffset": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "guid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "systemUser": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Id": {
+                "$ref": "#/$defs/guid"
+              },
+              "CreateTime": {
+                "$ref": "#/$defs/dateTimeOffset"
+              },
+              "UpdateTime": {
+                "$ref": "#/$defs/dateTimeOffset"
+              },
+              "Type": {
+                "enum": [
+                  "User",
+                  "Group",
+                  "Robot",
+                  "Application"
+                ]
+              },
+              "Email": {
+                "type": "string"
+              },
+              "IsActive": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

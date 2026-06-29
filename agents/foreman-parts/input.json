@@ -1,0 +1,5 @@
+{
+  "fix": "Isolate under no-load + LOTO, cut out and replace BOTH mating MC4 connectors with a matched genuine pair and re-crimp to spec; thermal-scan neighbours.",
+  "required_parts": ["genuine MC4 male-female pair", "MC4 crimp die"],
+  "equipment_class": "pv_string"
+}

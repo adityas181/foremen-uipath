@@ -1,0 +1,31 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "bucket",
+      "key": "foremenbucket.Shared/foremen v1",
+      "value": {
+        "name": {
+          "defaultValue": "foremenbucket",
+          "isExpression": false,
+          "displayName": "Name"
+        },
+        "folderPath": {
+          "defaultValue": "Shared/foremen v1",
+          "isExpression": false,
+          "displayName": "Folder Path"
+        },
+        "EntryPointUniqueId": {
+          "defaultValue": "9bc01be9-bf25-4672-a628-8babe45f3ca2",
+          "isExpression": false,
+          "displayName": "agent"
+        }
+      },
+      "metadata": {
+        "ActivityName": "retrieve_async",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "FullName"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+requests
+opencv-python
+pydantic
+langchain-openai
+langgraph
+# For deploying the agent to UiPath (Studio Web / Orchestrator):
+# uipath-langchain

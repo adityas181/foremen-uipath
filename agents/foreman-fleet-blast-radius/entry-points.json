@@ -1,0 +1,192 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "d4226a5d-b2ce-4685-9ee5-29a145b64024",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "case_id": {
+                        "description": "Maestro case id, e.g. CASE-PV-0758",
+                        "title": "Case Id",
+                        "type": "string"
+                    },
+                    "asset_id": {
+                        "description": "The failing asset, e.g. AST-PV-RJ-S12",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "site_id": {
+                        "default": "",
+                        "description": "Site id, e.g. RJ-SOLAR-1",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "mode": {
+                        "default": "investigate",
+                        "description": "'investigate' (read) or 'close' (learn)",
+                        "title": "Mode",
+                        "type": "string"
+                    },
+                    "failure_mode": {
+                        "default": "mc4_connector_burn",
+                        "description": "Confirmed failure, e.g. mc4_connector_burn (drives common-cause + close)",
+                        "title": "Failure Mode",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "default": 0.9,
+                        "description": "Confidence of the confirmed failure (close mode)",
+                        "title": "Confidence",
+                        "type": "number"
+                    },
+                    "backend_url": {
+                        "default": "",
+                        "description": "Public URL of the view-backend (cloud); empty = localhost",
+                        "title": "Backend Url",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "case_id",
+                    "asset_id"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "systemic": {
+                        "default": false,
+                        "title": "Systemic",
+                        "type": "boolean"
+                    },
+                    "affected_count": {
+                        "default": 0,
+                        "title": "Affected Count",
+                        "type": "integer"
+                    },
+                    "affected_sites": {
+                        "default": [],
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Affected Sites",
+                        "type": "array"
+                    },
+                    "batch_id": {
+                        "default": "",
+                        "title": "Batch Id",
+                        "type": "string"
+                    },
+                    "batch_status": {
+                        "default": "",
+                        "title": "Batch Status",
+                        "type": "string"
+                    },
+                    "known_pattern": {
+                        "default": false,
+                        "title": "Known Pattern",
+                        "type": "boolean"
+                    },
+                    "prior_failures": {
+                        "default": 0,
+                        "title": "Prior Failures",
+                        "type": "integer"
+                    },
+                    "affected_assets": {
+                        "default": [],
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Affected Assets",
+                        "type": "array"
+                    },
+                    "criticality_rank": {
+                        "default": [],
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "title": "Criticality Rank",
+                        "type": "array"
+                    },
+                    "recommendation": {
+                        "default": "",
+                        "title": "Recommendation",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "blast",
+                        "name": "blast",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "finalize",
+                        "name": "finalize",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "close",
+                        "name": "close",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "blast",
+                        "label": null
+                    },
+                    {
+                        "source": "__start__",
+                        "target": "close",
+                        "label": null
+                    },
+                    {
+                        "source": "blast",
+                        "target": "finalize",
+                        "label": null
+                    },
+                    {
+                        "source": "close",
+                        "target": "__end__",
+                        "label": null
+                    },
+                    {
+                        "source": "finalize",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

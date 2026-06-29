@@ -1,0 +1,8 @@
+{
+  "case_id": "CASE-MC4-0788",
+  "asset_id": "AST-SCB-DEL-0788",
+  "site_id": "DEL-0788",
+  "failure_mode": "mc4_connector_burn",
+  "mode": "investigate",
+  "backend_url": ""
+}

@@ -1,0 +1,29 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Twilio_1",
+    "kind": "connection",
+    "type": "uipath-twilio-messaging",
+    "apiVersion": "integrationservice.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "connectorName": "Twilio",
+      "name": "Twilio_1",
+      "description": null,
+      "authenticationType": "AuthenticateAfterDeployment",
+      "connectorVersion": "1.2.7",
+      "connectorKey": "uipath-twilio-messaging",
+      "pollingInterval": 1
+    },
+    "locks": [],
+    "key": "751b0f2d-82fd-45a8-9bac-cfc47d474209"
+  }
+}

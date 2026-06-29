@@ -1,0 +1,43 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "dc923782-39a2-44c8-e9c6-08dec6ee4f70",
+  "Projects": [
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "WritePerception/project.uiproj",
+      "Id": "3ebae022-2684-4af0-a1ea-42392f2c88d6"
+    },
+    {
+      "Type": "CaseManagement",
+      "ProjectRelativePath": "Agentic case/project.uiproj",
+      "Id": "55ef0354-cb71-40a4-a92e-26f570a2da8e"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "LogConversation/project.uiproj",
+      "Id": "c3442f29-04fa-4064-b41d-1618f34541c4"
+    },
+    {
+      "Type": "WebApp",
+      "ProjectRelativePath": "SimpleApprovalApp/project.uiproj",
+      "Id": "42ddda36-b6bd-4e30-a502-94fd406734a7"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "ResolveKeys/project.uiproj",
+      "Id": "14ef43bb-30a9-4912-aced-8997ce14b708"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "Foreman-Dispatcher/project.uiproj",
+      "Id": "9b4f520b-03ea-428f-a584-2c9b743554fa"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "WaitForReply/project.uiproj",
+      "Id": "57860098-1f21-422b-87a3-d773dded92f4"
+    }
+  ],
+  "AutomationHubIdeaUrl": null
+}

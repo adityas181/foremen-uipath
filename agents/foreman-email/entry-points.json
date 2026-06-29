@@ -1,0 +1,249 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "07db7d9b-26a2-4432-ac64-4c2f44b5157a",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "case_id": {
+                        "default": "",
+                        "description": "FOREMAN case id (external key) — routing key for the live UI feed; map to the Maestro Case ID expression",
+                        "title": "Case Id",
+                        "type": "string"
+                    },
+                    "case": {
+                        "additionalProperties": true,
+                        "description": "supervisor.case {asset_id, site_id, worker_text, ...}",
+                        "title": "Case",
+                        "type": "object"
+                    },
+                    "diagnosis": {
+                        "additionalProperties": true,
+                        "description": "supervisor.diagnosis {root_cause, confidence, ...}",
+                        "title": "Diagnosis",
+                        "type": "object"
+                    },
+                    "risk": {
+                        "additionalProperties": true,
+                        "description": "supervisor.risk {band, score, ...}",
+                        "title": "Risk",
+                        "type": "object"
+                    },
+                    "invoked": {
+                        "description": "supervisor.invoked[] (holds fleet_blast_radius result)",
+                        "items": {},
+                        "title": "Invoked",
+                        "type": "array"
+                    },
+                    "not_invoked": {
+                        "description": "supervisor.not_invoked[] (holds warranty why)",
+                        "items": {},
+                        "title": "Not Invoked",
+                        "type": "array"
+                    },
+                    "action_plan": {
+                        "description": "supervisor.action_plan[] {order, category, action}",
+                        "items": {},
+                        "title": "Action Plan",
+                        "type": "array"
+                    },
+                    "summary": {
+                        "default": "",
+                        "description": "supervisor.summary (fallback email body)",
+                        "title": "Summary",
+                        "type": "string"
+                    },
+                    "report_url": {
+                        "default": "",
+                        "description": "supervisor.report_url \u2014 the SOP PDF to attach",
+                        "title": "Report Url",
+                        "type": "string"
+                    },
+                    "spoken_opener": {
+                        "default": "",
+                        "description": "voice.spoken_opener",
+                        "title": "Spoken Opener",
+                        "type": "string"
+                    },
+                    "spoken_recommendation": {
+                        "default": "",
+                        "description": "voice.spoken_recommendation",
+                        "title": "Spoken Recommendation",
+                        "type": "string"
+                    },
+                    "transcript": {
+                        "description": "voice.transcript[] (call turns)",
+                        "items": {},
+                        "title": "Transcript",
+                        "type": "array"
+                    },
+                    "decision": {
+                        "default": "",
+                        "description": "voice.decision (approved/hold/...)",
+                        "title": "Decision",
+                        "type": "string"
+                    },
+                    "call_sid": {
+                        "default": "",
+                        "description": "voice.call_sid",
+                        "title": "Call Sid",
+                        "type": "string"
+                    },
+                    "call_to": {
+                        "default": "",
+                        "description": "voice.to \u2014 the number called",
+                        "title": "Call To",
+                        "type": "string"
+                    },
+                    "call_from": {
+                        "default": "",
+                        "description": "voice.from_ \u2014 the calling number",
+                        "title": "Call From",
+                        "type": "string"
+                    },
+                    "recording_url": {
+                        "default": "",
+                        "description": "voice.recording_url \u2014 URL of the call recording (mp3) to download + attach",
+                        "title": "Recording Url",
+                        "type": "string"
+                    },
+                    "decision_context": {
+                        "default": "",
+                        "description": "Override describing the human/voice decision",
+                        "title": "Decision Context",
+                        "type": "string"
+                    },
+                    "recipients": {
+                        "default": "",
+                        "description": "Comma-separated To addresses",
+                        "title": "Recipients",
+                        "type": "string"
+                    },
+                    "cc": {
+                        "default": "",
+                        "description": "Optional comma-separated Cc addresses",
+                        "title": "Cc",
+                        "type": "string"
+                    },
+                    "media_blob_path": {
+                        "default": "",
+                        "description": "Video blob path in the bucket, e.g. MM....mp4",
+                        "title": "Media Blob Path",
+                        "type": "string"
+                    },
+                    "media_bucket": {
+                        "default": "foremenbucket",
+                        "description": "Storage Bucket name holding the video",
+                        "title": "Media Bucket",
+                        "type": "string"
+                    },
+                    "media_folder": {
+                        "default": "Shared/foremen v1",
+                        "description": "Folder the bucket lives in",
+                        "title": "Media Folder",
+                        "type": "string"
+                    },
+                    "max_attachment_mb": {
+                        "default": 24,
+                        "description": "Skip any attachment larger than this (Gmail ~25MB)",
+                        "title": "Max Attachment Mb",
+                        "type": "integer"
+                    },
+                    "dry_run": {
+                        "default": false,
+                        "description": "Compose + build attachments but DO NOT send",
+                        "title": "Dry Run",
+                        "type": "boolean"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "subject": {
+                        "default": "",
+                        "title": "Subject",
+                        "type": "string"
+                    },
+                    "body": {
+                        "default": "",
+                        "title": "Body",
+                        "type": "string"
+                    },
+                    "attached": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Attached",
+                        "type": "array"
+                    },
+                    "sent": {
+                        "default": false,
+                        "title": "Sent",
+                        "type": "boolean"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "compose",
+                        "name": "compose",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "send",
+                        "name": "send",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "compose",
+                        "label": null
+                    },
+                    {
+                        "source": "compose",
+                        "target": "send",
+                        "label": null
+                    },
+                    {
+                        "source": "send",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(cd \"D:/UIpath/foreman-supervisor-v1\" 2>/dev/null && echo \"=== files ===\" && find . -type f -not -path \"*/.venv/*\" -not -path \"*/__pycache__/*\" -not -path \"*/.git/*\" -not -path \"*/.uipath/*\" | head -40 && echo \"\" && echo \"=== main.py size ===\" && wc -l main.py 2>/dev/null || echo \"PATH NOT FOUND\")",
+      "Read(//d/UIpath/foreman-supervisor-v1/**)",
+      "Bash(python -m py_compile main.py foreman_events.py voice_server.py)",
+      "Bash(cd \"D:/UIpath/foreman-voice\" && echo \"=== .env tail ===\" && tail -6 .env && echo \"\" && echo \"=== case_id in entry-points.json input? ===\" && grep -n \"case_id\" entry-points.json | head)",
+      "Read(//d/UIpath/foreman-voice/**)",
+      "Read(//d/UIpath/foreman-email/**)",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__take_screenshot",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__navigate_page",
+      "Bash(npx tsc *)",
+      "Bash(echo \"TSC_DONE_EXIT=$?\")",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__evaluate_script"
+    ],
+    "additionalDirectories": [
+      "D:\\UIpath\\foreman-supervisor-v1",
+      "D:\\UIpath\\foreman-voice",
+      "D:\\UIpath\\foreman-email"
+    ]
+  }
+}

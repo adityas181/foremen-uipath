@@ -1,0 +1,5 @@
+# Minimal deps for hosting the view-backend webhook (Render/Railway/Fly).
+# The heavier server/requirements.txt (opencv, langgraph, …) is only for local
+# agent work — the bridge itself needs just these two.
+fastapi
+uvicorn[standard]

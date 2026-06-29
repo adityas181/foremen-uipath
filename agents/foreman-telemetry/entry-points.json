@@ -1,0 +1,100 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "3a142072-8a0b-4d18-b8ac-5201889f8bf1",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "asset_id": {
+                        "default": "",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "fault": {
+                        "default": "",
+                        "title": "Fault",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "trend": {
+                        "default": "",
+                        "title": "Trend",
+                        "type": "string"
+                    },
+                    "anomaly_score": {
+                        "default": 0.0,
+                        "title": "Anomaly Score",
+                        "type": "number"
+                    },
+                    "remaining_useful_life": {
+                        "default": "",
+                        "title": "Remaining Useful Life",
+                        "type": "string"
+                    },
+                    "corroborates_perception": {
+                        "default": false,
+                        "title": "Corroborates Perception",
+                        "type": "boolean"
+                    },
+                    "fix_now_or_schedule": {
+                        "default": "",
+                        "title": "Fix Now Or Schedule",
+                        "type": "string"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "telemetry_stub",
+                        "name": "telemetry_stub",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "telemetry_stub",
+                        "label": null
+                    },
+                    {
+                        "source": "telemetry_stub",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

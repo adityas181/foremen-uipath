@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-page text-ink-700 font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tightest text-ink-900;
+  }
+
+  /* Thin, elegant scrollbars (light) */
+  *::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(20, 23, 28, 0.14);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(20, 23, 28, 0.26);
+    background-clip: padding-box;
+  }
+
+  ::selection {
+    background: rgba(20, 23, 28, 0.10);
+  }
+}
+
+@layer components {
+  /* ---- Pill chip (icon + mono label) — TwelveLabs outlined chip ---- */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-mono font-medium leading-none;
+  }
+  /* kept the .chip-dark name so existing usages restyle for free */
+  .chip-dark {
+    @apply border-ink-900/[0.10] bg-ink-900/[0.03] text-ink-600;
+  }
+  .chip-light {
+    @apply border-ink-900/[0.10] bg-white text-ink-700 shadow-card-soft;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-ink {
+    @apply bg-ink-900 text-white hover:bg-ink-800 hover:shadow-glow;
+  }
+  .btn-light {
+    @apply border border-ink-900/[0.10] bg-white text-ink-900 shadow-card-soft hover:border-ink-900/20 hover:shadow-card-light;
+  }
+  .btn-dark {
+    @apply border border-ink-900/[0.12] bg-white text-ink-800 hover:bg-ink-900/[0.04];
+  }
+  .btn-brand {
+    @apply bg-brand-500 text-white hover:bg-brand-600 hover:shadow-glow;
+  }
+
+  /* ---- Surfaces — flat, hairline-bordered, editorial ---- */
+  .panel {
+    @apply rounded-2xl border border-ink-900/[0.07] bg-white shadow-card-soft;
+  }
+  /* Raised, crisply-defined card for dashboards — lifts gently on hover */
+  .card-raised {
+    @apply rounded-2xl border border-ink-900/[0.07] bg-white shadow-card-flat transition-all duration-200;
+  }
+  .card-raised:hover {
+    @apply -translate-y-0.5 border-ink-900/[0.12] shadow-card-light;
+  }
+  .panel-tight {
+    @apply rounded-xl border border-ink-900/[0.07] bg-paper-50;
+  }
+
+  /* Soft pastel gradient card (the Search/Analyze/Embed look) */
+  .pastel-card {
+    @apply rounded-4xl border border-ink-900/[0.06] shadow-card-light;
+  }
+
+  .hairline {
+    @apply border-ink-900/[0.07];
+  }
+
+  /* Decorative gradient text */
+  .text-sheen {
+    @apply bg-brand-sheen bg-clip-text text-transparent;
+  }
+
+  /* ---- Sidebar nav item (left rail) ---- */
+  .nav-link {
+    @apply relative flex items-center gap-3 rounded-xl px-3 py-[9px] text-[13.5px] font-medium text-ink-500 transition-all duration-150;
+  }
+  .nav-link:hover {
+    @apply bg-ink-900/[0.035] text-ink-800;
+  }
+  .nav-link-active {
+    @apply bg-brand-500/[0.08] font-semibold text-brand-700;
+  }
+  .nav-link-active::before {
+    content: '';
+    @apply absolute left-0 top-1/2 h-5 w-[3px] -translate-y-1/2 rounded-full bg-brand-500;
+  }
+
+  /* ---- Secondary section tabs (case-detail sub-nav) ---- */
+  .subtab {
+    @apply relative inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-3 text-[13px] font-medium text-ink-400 transition-colors;
+  }
+  .subtab:hover {
+    @apply text-ink-700;
+  }
+  .subtab-active {
+    @apply text-ink-900;
+  }
+
+  /* Standard editorial section card */
+  .section-card {
+    @apply rounded-2xl border border-ink-900/[0.07] bg-white shadow-card-soft;
+  }
+}
+
+@layer utilities {
+  /* Subtle dotted grid for light surfaces */
+  .bg-dots {
+    background-image: radial-gradient(rgba(20, 23, 28, 0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  /* kept name so existing usages get a light grid */
+  .bg-grid-dark {
+    background-image: radial-gradient(rgba(20, 23, 28, 0.045) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .bg-grid-fade {
+    -webkit-mask-image: radial-gradient(70% 70% at 50% 0%, #000 0%, transparent 80%);
+    mask-image: radial-gradient(70% 70% at 50% 0%, #000 0%, transparent 80%);
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-md;
+  }
+  /* Loading shimmer skeleton */
+  .skeleton {
+    @apply relative overflow-hidden bg-ink-900/[0.05];
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent
+    );
+  }
+  /* Hide scrollbar but keep scroll (for sub-tab strips, chip rows) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ── Logo marquee (the conveyor belt) ─────────────────────────────────────── */
+@keyframes fm-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* exactly one set — the track is duplicated, items carry their own margin */
+    transform: translateX(-50%);
+  }
+}
+.fm-marquee {
+  animation: fm-marquee 24s linear infinite;
+  will-change: transform;
+}
+.group:hover .fm-marquee {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fm-marquee {
+    animation: none;
+  }
+}

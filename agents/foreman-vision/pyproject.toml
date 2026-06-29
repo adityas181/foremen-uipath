@@ -1,0 +1,16 @@
+[project]
+name = "foreman-vision-v4"
+version = "0.0.1"
+description = "UiPath LangGraph coded agent (skeleton)"
+authors = [{ name = "Aditya Singh" }]
+requires-python = ">=3.11"
+dependencies = [
+    "uipath",
+    "uipath-langchain",
+    "google-genai",
+]
+
+[dependency-groups]
+dev = [
+    "uipath-dev",
+]

@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "Foreman-Dispatcher",
+  "Description": null,
+  "MainFile": "Main.xaml"
+}

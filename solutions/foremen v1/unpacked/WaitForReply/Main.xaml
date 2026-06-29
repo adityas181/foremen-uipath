@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:de="clr-namespace:DataService.Entities;assembly=DataService.DataService.Entities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="phone" Type="InArgument(x:String)" />
+    <x:Property Name="out_replyText" Type="OutArgument(x:String)" />
+    <x:Property Name="out_mediaUrl" Type="OutArgument(x:String)" />
+  </x:Members>
+  <this:Main.phone>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.phone>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="24">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>DataService.Entities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+      <AssemblyReference>DataService.DataService.Entities</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Annotations</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="attempts" />
+      <Variable x:TypeArguments="x:Boolean" Default="[False]" Name="found" />
+      <Variable x:TypeArguments="scg:IList(de:InboundMessage)" Name="outputRecords">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">QueryEntityRecords`1_1</x:String>
+            <x:String x:Key="SourcePropertyName">OutputRecords</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[found = false AND attempts &lt; 30]" DisplayName="Do While" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <uda:QueryEntityRecords x:TypeArguments="de:InboundMessage" TotalRecords="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="3b89c7fc-506a-f111-8fcb-000d3ab36606" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[outputRecords]" QueriedEntityId="3b89c7fc-506a-f111-8fcb-000d3ab36606" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+            <uda:QueryEntityRecords.FilterArguments>
+              <uda:FilterArgument FilterActivityType="{x:Null}">
+                <uda:FilterArgument.Filter>
+                  <uda:GroupFilter Index="0" Operator="AND">
+                    <uda:GroupFilter.Filters>
+                      <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="phone" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="processed" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="Equals false" ValueIndex="1" />
+                      </scg:List>
+                    </uda:GroupFilter.Filters>
+                    <uda:GroupFilter.Groups>
+                      <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                    </uda:GroupFilter.Groups>
+                  </uda:GroupFilter>
+                </uda:FilterArgument.Filter>
+              </uda:FilterArgument>
+            </uda:QueryEntityRecords.FilterArguments>
+            <uda:QueryEntityRecords.FilterValues>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <InArgument x:TypeArguments="x:String">[string.Format("{0}", phone)]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </scg:List>
+            </uda:QueryEntityRecords.FilterValues>
+          </uda:QueryEntityRecords>
+          <If Condition="[outputRecords.Count &gt; 0]" DisplayName="If" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <ui:ForEach x:TypeArguments="de:InboundMessage" CurrentIndex="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" DisplayName="For Each currentInboundMessage" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[outputRecords]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="de:InboundMessage">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="de:InboundMessage" Name="currentInboundMessage" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <uda:UpdateEntityRecord x:TypeArguments="de:InboundMessage" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Entity Record" EntityId="3b89c7fc-506a-f111-8fcb-000d3ab36606" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.InboundMessage() With {  .processed = true, .Id = currentInboundMessage.Id }]" RecordId="[currentInboundMessage.Id]" TimeoutInMs="30000">
+                          <uda:UpdateEntityRecord.State>
+                            <udam:RecordState>
+                              <udam:RecordState.SelectedFields>
+                                <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="6">
+                                  <udam:DynamicEntityField Id="4789c7fc-506a-f111-8fcb-000d3ab36606" Name="mediaUrl" />
+                                  <udam:DynamicEntityField Id="4889c7fc-506a-f111-8fcb-000d3ab36606" Name="messageSid" />
+                                  <udam:DynamicEntityField Id="4589c7fc-506a-f111-8fcb-000d3ab36606" Name="phone" />
+                                  <udam:DynamicEntityField Id="4989c7fc-506a-f111-8fcb-000d3ab36606" Name="processed">
+                                    <udam:DynamicEntityField.ArgumentValue>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </udam:DynamicEntityField.ArgumentValue>
+                                  </udam:DynamicEntityField>
+                                  <udam:DynamicEntityField Id="4689c7fc-506a-f111-8fcb-000d3ab36606" Name="text" />
+                                  <udam:DynamicEntityField Id="4a89c7fc-506a-f111-8fcb-000d3ab36606" Name="timestamp" />
+                                </scg:List>
+                              </udam:RecordState.SelectedFields>
+                            </udam:RecordState>
+                          </uda:UpdateEntityRecord.State>
+                        </uda:UpdateEntityRecord>
+                        <Assign DisplayName="Assign" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[found]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Assign 2" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_replyText]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[currentInboundMessage.text]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Assign 3" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_mediaUrl]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[currentInboundMessage.mediaUrl]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Delay DisplayName="Delay" Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                <Assign DisplayName="Assign 1" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[attempts]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[attempts + 1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+    </ui:InterruptibleDoWhile>
+  </Sequence>
+</Activity>

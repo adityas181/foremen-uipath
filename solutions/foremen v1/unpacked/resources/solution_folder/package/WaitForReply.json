@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "WaitForReply",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "57860098-1f21-422b-87a3-d773dded92f4",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "WaitForReply",
+      "description": null
+    },
+    "locks": [],
+    "key": "2415a3da-87e7-401b-9a4a-9fc6f430e746"
+  }
+}

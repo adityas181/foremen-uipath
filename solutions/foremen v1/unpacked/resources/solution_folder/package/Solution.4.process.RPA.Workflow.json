@@ -1,0 +1,33 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Solution.4.process.RPA.Workflow",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [
+      {
+        "name": "Solution.4.process.RPA.Workflow.1.0.9.nupkg",
+        "kind": "Package",
+        "version": "1.0.9",
+        "url": "https://staging.uipath.com/0a4588ad-5058-46df-b939-4af72e0be6ed/8b8bd555-2c55-413e-83b5-e63b6043292d/orchestrator_/odata/Processes/UiPath.Server.Configuration.OData.DownloadPackage(key=\u0027Solution.4.process.RPA.Workflow:1.0.9\u0027)?feedId=c5925989-3313-45ef-a2f0-d532de663d5c",
+        "key": "Solution.4.process.RPA.Workflow_1.0.9"
+      }
+    ],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": "Solution.4.process.RPA.Workflow.1.0.9.nupkg",
+      "fileReference": "Solution.4.process.RPA.Workflow_1.0.9",
+      "name": "Solution.4.process.RPA.Workflow",
+      "description": null
+    },
+    "locks": [],
+    "key": "Solution.4.process.RPA.Workflow:1.0.9"
+  }
+}

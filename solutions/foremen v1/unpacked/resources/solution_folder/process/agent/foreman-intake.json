@@ -1,0 +1,60 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "foreman-intake",
+    "kind": "process",
+    "type": "agent",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "foreman-intake",
+        "kind": "Package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "Agent",
+      "agentMemory": null,
+      "targetRuntime": "python",
+      "environmentVariables": "",
+      "referencedAssets": null,
+      "name": "foreman-intake",
+      "description": "foreman-intake",
+      "package": {
+        "name": "foreman-intake",
+        "key": "foreman-intake:0.0.1"
+      },
+      "packageName": "foreman-intake",
+      "packageVersion": "0.0.1",
+      "entryPointUniqueId": "01683d6f-5320-41cd-8f8c-b7309e5291d5",
+      "entryPointName": "agent",
+      "inputArguments": "{\u0022latest_message\u0022:\u0022\u0022,\u0022has_media\u0022:false,\u0022current_issue_text\u0022:\u0022\u0022,\u0022current_asset_id\u0022:\u0022\u0022}",
+      "inputArgumentsSchema": null,
+      "outputArgumentsSchema": null,
+      "inputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022latest_message\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022description\u0022: \u0022Newest worker message (may be empty if media-only)\u0022,\n      \u0022title\u0022: \u0022Latest Message\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022has_media\u0022: {\n      \u0022default\u0022: false,\n      \u0022description\u0022: \u0022True if a photo/video has arrived so far\u0022,\n      \u0022title\u0022: \u0022Has Media\u0022,\n      \u0022type\u0022: \u0022boolean\u0022\n    },\n    \u0022current_issue_text\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022description\u0022: \u0022Issue gathered so far (carried forward)\u0022,\n      \u0022title\u0022: \u0022Current Issue Text\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022current_asset_id\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022description\u0022: \u0022Validated asset gathered so far (carried forward)\u0022,\n      \u0022title\u0022: \u0022Current Asset Id\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    }\n  },\n  \u0022required\u0022: []\n}",
+      "outputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022complete\u0022: {\n      \u0022default\u0022: false,\n      \u0022title\u0022: \u0022Complete\u0022,\n      \u0022type\u0022: \u0022boolean\u0022\n    },\n    \u0022issue_text\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Issue Text\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022asset_id\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Asset Id\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022site_id\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Site Id\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022asset_verified\u0022: {\n      \u0022default\u0022: false,\n      \u0022title\u0022: \u0022Asset Verified\u0022,\n      \u0022type\u0022: \u0022boolean\u0022\n    },\n    \u0022missing\u0022: {\n      \u0022default\u0022: [],\n      \u0022items\u0022: {\n        \u0022type\u0022: \u0022string\u0022\n      },\n      \u0022title\u0022: \u0022Missing\u0022,\n      \u0022type\u0022: \u0022array\u0022\n    },\n    \u0022reply_message\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Reply Message\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    }\n  },\n  \u0022required\u0022: []\n}",
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "retentionBucketRef": null,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "staleRetentionBucketRef": null,
+      "entryPoints": "[{\u0022UniqueId\u0022:\u002201683d6f-5320-41cd-8f8c-b7309e5291d5\u0022,\u0022Path\u0022:\u0022agent\u0022,\u0022DisplayName\u0022:null,\u0022InputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022latest_message\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022description\\\u0022: \\\u0022Newest worker message (may be empty if media-only)\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Latest Message\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022has_media\\\u0022: {\\n      \\\u0022default\\\u0022: false,\\n      \\\u0022description\\\u0022: \\\u0022True if a photo/video has arrived so far\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Has Media\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022boolean\\\u0022\\n    },\\n    \\\u0022current_issue_text\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022description\\\u0022: \\\u0022Issue gathered so far (carried forward)\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Current Issue Text\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022current_asset_id\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022description\\\u0022: \\\u0022Validated asset gathered so far (carried forward)\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Current Asset Id\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    }\\n  },\\n  \\\u0022required\\\u0022: []\\n}\u0022,\u0022OutputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022complete\\\u0022: {\\n      \\\u0022default\\\u0022: false,\\n      \\\u0022title\\\u0022: \\\u0022Complete\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022boolean\\\u0022\\n    },\\n    \\\u0022issue_text\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Issue Text\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022asset_id\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Asset Id\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022site_id\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Site Id\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022asset_verified\\\u0022: {\\n      \\\u0022default\\\u0022: false,\\n      \\\u0022title\\\u0022: \\\u0022Asset Verified\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022boolean\\\u0022\\n    },\\n    \\\u0022missing\\\u0022: {\\n      \\\u0022default\\\u0022: [],\\n      \\\u0022items\\\u0022: {\\n        \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n      },\\n      \\\u0022title\\\u0022: \\\u0022Missing\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022array\\\u0022\\n    },\\n    \\\u0022reply_message\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Reply Message\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    }\\n  },\\n  \\\u0022required\\\u0022: []\\n}\u0022,\u0022Type\u0022:4,\u0022TargetRuntime\u0022:null,\u0022ContentRoot\u0022:null,\u0022DataVariation\u0022:null,\u0022Id\u0022:13971013}]",
+      "connections": null,
+      "tags": []
+    },
+    "locks": [],
+    "key": "600148a2-6b01-4915-abad-19c8f2cfb867"
+  }
+}

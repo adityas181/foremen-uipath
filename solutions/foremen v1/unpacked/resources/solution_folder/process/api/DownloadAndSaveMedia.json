@@ -1,0 +1,56 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "DownloadAndSaveMedia",
+    "kind": "process",
+    "type": "api",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Solution.api.DownloadAndSaveMedia",
+        "kind": "Package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "Api",
+      "name": "DownloadAndSaveMedia",
+      "description": "Created by UiPath",
+      "package": {
+        "name": "Solution.api.DownloadAndSaveMedia",
+        "key": "Solution.api.DownloadAndSaveMedia:1.0.1"
+      },
+      "packageName": "Solution.api.DownloadAndSaveMedia",
+      "packageVersion": "1.0.1",
+      "entryPointUniqueId": "09c6b120-f604-4bb4-b1a4-38d7bc6a5e94",
+      "entryPointName": "content/Workflow.json",
+      "inputArguments": null,
+      "inputArgumentsSchema": null,
+      "outputArgumentsSchema": null,
+      "inputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022in_mediaUrl\u0022: {\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022in_messageSid\u0022: {\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022in_mediaContentType\u0022: {\n      \u0022type\u0022: \u0022string\u0022\n    }\n  },\n  \u0022required\u0022: [\n    \u0022in_mediaUrl\u0022,\n    \u0022in_messageSid\u0022\n  ],\n  \u0022title\u0022: \u0022Inputs\u0022\n}",
+      "outputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022out_mediaPath\u0022: {\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022out_mediaContentType\u0022: {\n      \u0022type\u0022: \u0022string\u0022\n    }\n  },\n  \u0022title\u0022: \u0022Outputs\u0022\n}",
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "retentionBucketRef": null,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "staleRetentionBucketRef": null,
+      "entryPoints": "[{\u0022UniqueId\u0022:\u002209c6b120-f604-4bb4-b1a4-38d7bc6a5e94\u0022,\u0022Path\u0022:\u0022content/Workflow.json\u0022,\u0022DisplayName\u0022:null,\u0022InputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022in_mediaUrl\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022in_messageSid\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022in_mediaContentType\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    }\\n  },\\n  \\\u0022required\\\u0022: [\\n    \\\u0022in_mediaUrl\\\u0022,\\n    \\\u0022in_messageSid\\\u0022\\n  ],\\n  \\\u0022title\\\u0022: \\\u0022Inputs\\\u0022\\n}\u0022,\u0022OutputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022out_mediaPath\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022out_mediaContentType\\\u0022: {\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    }\\n  },\\n  \\\u0022title\\\u0022: \\\u0022Outputs\\\u0022\\n}\u0022,\u0022Type\u0022:6,\u0022TargetRuntime\u0022:null,\u0022ContentRoot\u0022:null,\u0022DataVariation\u0022:null,\u0022Id\u0022:13918802}]",
+      "connections": null,
+      "tags": []
+    },
+    "locks": [],
+    "key": "2e82fa1f-2811-4018-859e-54c2e729c552"
+  }
+}

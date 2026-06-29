@@ -1,0 +1,10 @@
+[project]
+name = "foreman-entitlement"
+version = "0.0.1"
+description = "foreman-entitlement"
+authors = [{ name = "John Doe", email = "john.doe@myemail.com" }]
+dependencies = [
+    "uipath-langchain-client[bedrock]>=1.11.3",
+    "uipath-langchain[bedrock,vertex]>=0.10.0, <0.11.0",
+]
+requires-python = ">=3.11"

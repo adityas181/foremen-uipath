@@ -1,0 +1,94 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "5655eda6-d8c4-4b90-900d-3840930291dd",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "vendor": {
+                        "default": "",
+                        "title": "Vendor",
+                        "type": "string"
+                    },
+                    "batch_id": {
+                        "default": "",
+                        "title": "Batch Id",
+                        "type": "string"
+                    },
+                    "root_cause": {
+                        "default": "",
+                        "title": "Root Cause",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "known_defect_or_recall": {
+                        "default": false,
+                        "title": "Known Defect Or Recall",
+                        "type": "boolean"
+                    },
+                    "rma_path": {
+                        "type": "string"
+                    },
+                    "approved_replacement_source": {
+                        "type": "string"
+                    },
+                    "supplier_escalation": {
+                        "type": "string"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "vendor_stub",
+                        "name": "vendor_stub",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "vendor_stub",
+                        "label": null
+                    },
+                    {
+                        "source": "vendor_stub",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

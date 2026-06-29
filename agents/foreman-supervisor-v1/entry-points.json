@@ -1,0 +1,162 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "2953456b-5721-4619-9f64-4a475bb692ed",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "issue_text_received": {
+                        "default": "",
+                        "title": "Issue Text Received",
+                        "type": "string"
+                    },
+                    "perception": {
+                        "additionalProperties": true,
+                        "title": "Perception",
+                        "type": "object"
+                    },
+                    "history_match": {
+                        "additionalProperties": true,
+                        "title": "History Match",
+                        "type": "object"
+                    },
+                    "asset_id": {
+                        "default": "",
+                        "title": "Asset Id",
+                        "type": "string"
+                    },
+                    "site_id": {
+                        "default": "",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "caseId": {
+                        "default": "",
+                        "description": "FOREMAN case id (the case's external key). Routing key for the live UI feed; map this to the Maestro Case ID expression. Optional.",
+                        "title": "Caseid",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "case": {
+                        "additionalProperties": true,
+                        "title": "Case",
+                        "type": "object"
+                    },
+                    "diagnosis": {
+                        "additionalProperties": true,
+                        "title": "Diagnosis",
+                        "type": "object"
+                    },
+                    "risk": {
+                        "additionalProperties": true,
+                        "title": "Risk",
+                        "type": "object"
+                    },
+                    "safety_gate": {
+                        "additionalProperties": true,
+                        "title": "Safety Gate",
+                        "type": "object"
+                    },
+                    "auto_resolve_blocked": {
+                        "default": false,
+                        "title": "Auto Resolve Blocked",
+                        "type": "boolean"
+                    },
+                    "invoked": {
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "title": "Invoked",
+                        "type": "array"
+                    },
+                    "not_invoked": {
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "title": "Not Invoked",
+                        "type": "array"
+                    },
+                    "action_plan": {
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "title": "Action Plan",
+                        "type": "array"
+                    },
+                    "summary": {
+                        "default": "",
+                        "title": "Summary",
+                        "type": "string"
+                    },
+                    "worker_message": {
+                        "default": "",
+                        "title": "Worker Message",
+                        "type": "string"
+                    },
+                    "report_url": {
+                        "default": "",
+                        "title": "Report Url",
+                        "type": "string"
+                    },
+                    "errors": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Errors",
+                        "type": "array"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "supervise",
+                        "name": "supervise",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "supervise",
+                        "label": null
+                    },
+                    {
+                        "source": "supervise",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

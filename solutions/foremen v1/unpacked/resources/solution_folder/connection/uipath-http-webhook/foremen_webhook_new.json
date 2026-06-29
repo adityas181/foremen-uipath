@@ -1,0 +1,29 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "foremen_webhook_new",
+    "kind": "connection",
+    "type": "uipath-http-webhook",
+    "apiVersion": "integrationservice.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "connectorName": "HTTP Webhook",
+      "name": "foremen_webhook_new",
+      "description": null,
+      "authenticationType": "AuthenticateAfterDeployment",
+      "connectorVersion": "1.5.8",
+      "connectorKey": "uipath-http-webhook",
+      "pollingInterval": 5
+    },
+    "locks": [],
+    "key": "f2f540ca-5d46-4eb2-b67c-755457e6a201"
+  }
+}

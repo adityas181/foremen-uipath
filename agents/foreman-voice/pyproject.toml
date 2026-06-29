@@ -1,0 +1,12 @@
+[project]
+name = "foreman-voice-v3"
+version = "0.0.1"
+description = "foreman-voice-v3"
+authors = [{ name = "Aditya Singh"}]
+dependencies = [
+    "uipath-langchain-client[bedrock]>=1.11.3",
+    "uipath-langchain[bedrock,vertex]>=0.10.0, <0.11.0",
+    "twilio>=9.0",
+    "truststore>=0.9",
+]
+requires-python = ">=3.11"

@@ -1,0 +1,108 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "2b499ee9-f0f8-4b30-8b8d-efa56b4dab0c",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "site_id": {
+                        "default": "",
+                        "description": "Target site where the work is",
+                        "title": "Site Id",
+                        "type": "string"
+                    },
+                    "required_cert": {
+                        "default": "",
+                        "description": "Required certification token; if empty, inferred from fix_kind",
+                        "title": "Required Cert",
+                        "type": "string"
+                    },
+                    "fix_kind": {
+                        "default": "",
+                        "description": "The kind of fix needed (free text)",
+                        "title": "Fix Kind",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "crew_id": {
+                        "default": "",
+                        "title": "Crew Id",
+                        "type": "string"
+                    },
+                    "skill_match": {
+                        "default": false,
+                        "title": "Skill Match",
+                        "type": "boolean"
+                    },
+                    "certification_ok": {
+                        "default": false,
+                        "title": "Certification Ok",
+                        "type": "boolean"
+                    },
+                    "eta_min": {
+                        "default": 0,
+                        "title": "Eta Min",
+                        "type": "integer"
+                    },
+                    "route": {
+                        "default": "",
+                        "title": "Route",
+                        "type": "string"
+                    },
+                    "error": {
+                        "default": "",
+                        "title": "Error",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "dispatch",
+                        "name": "dispatch",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "dispatch",
+                        "label": null
+                    },
+                    {
+                        "source": "dispatch",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

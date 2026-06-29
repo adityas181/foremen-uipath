@@ -1,0 +1,60 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "foreman-supervisor-v4",
+    "kind": "process",
+    "type": "agent",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "foreman-supervisor-v4",
+        "kind": "Package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "Agent",
+      "agentMemory": null,
+      "targetRuntime": "python",
+      "environmentVariables": "",
+      "referencedAssets": null,
+      "name": "foreman-supervisor-v4",
+      "description": "foreman-supervisor-v4",
+      "package": {
+        "name": "foreman-supervisor-v4",
+        "key": "foreman-supervisor-v4:0.0.1"
+      },
+      "packageName": "foreman-supervisor-v4",
+      "packageVersion": "0.0.1",
+      "entryPointUniqueId": "2953456b-5721-4619-9f64-4a475bb692ed",
+      "entryPointName": "agent",
+      "inputArguments": "{\u0022issue_text_received\u0022:\u0022\u0022,\u0022asset_id\u0022:\u0022\u0022,\u0022site_id\u0022:\u0022\u0022,\u0022caseId\u0022:\u0022\u0022}",
+      "inputArgumentsSchema": null,
+      "outputArgumentsSchema": null,
+      "inputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022issue_text_received\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Issue Text Received\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022perception\u0022: {\n      \u0022additionalProperties\u0022: true,\n      \u0022title\u0022: \u0022Perception\u0022,\n      \u0022type\u0022: \u0022object\u0022\n    },\n    \u0022history_match\u0022: {\n      \u0022additionalProperties\u0022: true,\n      \u0022title\u0022: \u0022History Match\u0022,\n      \u0022type\u0022: \u0022object\u0022\n    },\n    \u0022asset_id\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Asset Id\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022site_id\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Site Id\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022caseId\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022description\u0022: \u0022FOREMAN case id (the case\u0027s external key). Routing key for the live UI feed; map this to the Maestro Case ID expression. Optional.\u0022,\n      \u0022title\u0022: \u0022Caseid\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    }\n  },\n  \u0022required\u0022: []\n}",
+      "outputArgumentsSchemaV2": "{\n  \u0022type\u0022: \u0022object\u0022,\n  \u0022properties\u0022: {\n    \u0022case\u0022: {\n      \u0022additionalProperties\u0022: true,\n      \u0022title\u0022: \u0022Case\u0022,\n      \u0022type\u0022: \u0022object\u0022\n    },\n    \u0022diagnosis\u0022: {\n      \u0022additionalProperties\u0022: true,\n      \u0022title\u0022: \u0022Diagnosis\u0022,\n      \u0022type\u0022: \u0022object\u0022\n    },\n    \u0022risk\u0022: {\n      \u0022additionalProperties\u0022: true,\n      \u0022title\u0022: \u0022Risk\u0022,\n      \u0022type\u0022: \u0022object\u0022\n    },\n    \u0022safety_gate\u0022: {\n      \u0022additionalProperties\u0022: true,\n      \u0022title\u0022: \u0022Safety Gate\u0022,\n      \u0022type\u0022: \u0022object\u0022\n    },\n    \u0022auto_resolve_blocked\u0022: {\n      \u0022default\u0022: false,\n      \u0022title\u0022: \u0022Auto Resolve Blocked\u0022,\n      \u0022type\u0022: \u0022boolean\u0022\n    },\n    \u0022invoked\u0022: {\n      \u0022items\u0022: {\n        \u0022additionalProperties\u0022: true,\n        \u0022type\u0022: \u0022object\u0022\n      },\n      \u0022title\u0022: \u0022Invoked\u0022,\n      \u0022type\u0022: \u0022array\u0022\n    },\n    \u0022not_invoked\u0022: {\n      \u0022items\u0022: {\n        \u0022additionalProperties\u0022: true,\n        \u0022type\u0022: \u0022object\u0022\n      },\n      \u0022title\u0022: \u0022Not Invoked\u0022,\n      \u0022type\u0022: \u0022array\u0022\n    },\n    \u0022action_plan\u0022: {\n      \u0022items\u0022: {\n        \u0022additionalProperties\u0022: true,\n        \u0022type\u0022: \u0022object\u0022\n      },\n      \u0022title\u0022: \u0022Action Plan\u0022,\n      \u0022type\u0022: \u0022array\u0022\n    },\n    \u0022summary\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Summary\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022worker_message\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Worker Message\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022report_url\u0022: {\n      \u0022default\u0022: \u0022\u0022,\n      \u0022title\u0022: \u0022Report Url\u0022,\n      \u0022type\u0022: \u0022string\u0022\n    },\n    \u0022errors\u0022: {\n      \u0022items\u0022: {\n        \u0022type\u0022: \u0022string\u0022\n      },\n      \u0022title\u0022: \u0022Errors\u0022,\n      \u0022type\u0022: \u0022array\u0022\n    }\n  },\n  \u0022required\u0022: []\n}",
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "retentionBucketRef": null,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "staleRetentionBucketRef": null,
+      "entryPoints": "[{\u0022UniqueId\u0022:\u00222953456b-5721-4619-9f64-4a475bb692ed\u0022,\u0022Path\u0022:\u0022agent\u0022,\u0022DisplayName\u0022:null,\u0022InputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022issue_text_received\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Issue Text Received\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022perception\\\u0022: {\\n      \\\u0022additionalProperties\\\u0022: true,\\n      \\\u0022title\\\u0022: \\\u0022Perception\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n    },\\n    \\\u0022history_match\\\u0022: {\\n      \\\u0022additionalProperties\\\u0022: true,\\n      \\\u0022title\\\u0022: \\\u0022History Match\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n    },\\n    \\\u0022asset_id\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Asset Id\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022site_id\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Site Id\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022caseId\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022description\\\u0022: \\\u0022FOREMAN case id (the case\u0027s external key). Routing key for the live UI feed; map this to the Maestro Case ID expression. Optional.\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Caseid\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    }\\n  },\\n  \\\u0022required\\\u0022: []\\n}\u0022,\u0022OutputArguments\u0022:\u0022{\\n  \\\u0022type\\\u0022: \\\u0022object\\\u0022,\\n  \\\u0022properties\\\u0022: {\\n    \\\u0022case\\\u0022: {\\n      \\\u0022additionalProperties\\\u0022: true,\\n      \\\u0022title\\\u0022: \\\u0022Case\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n    },\\n    \\\u0022diagnosis\\\u0022: {\\n      \\\u0022additionalProperties\\\u0022: true,\\n      \\\u0022title\\\u0022: \\\u0022Diagnosis\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n    },\\n    \\\u0022risk\\\u0022: {\\n      \\\u0022additionalProperties\\\u0022: true,\\n      \\\u0022title\\\u0022: \\\u0022Risk\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n    },\\n    \\\u0022safety_gate\\\u0022: {\\n      \\\u0022additionalProperties\\\u0022: true,\\n      \\\u0022title\\\u0022: \\\u0022Safety Gate\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n    },\\n    \\\u0022auto_resolve_blocked\\\u0022: {\\n      \\\u0022default\\\u0022: false,\\n      \\\u0022title\\\u0022: \\\u0022Auto Resolve Blocked\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022boolean\\\u0022\\n    },\\n    \\\u0022invoked\\\u0022: {\\n      \\\u0022items\\\u0022: {\\n        \\\u0022additionalProperties\\\u0022: true,\\n        \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n      },\\n      \\\u0022title\\\u0022: \\\u0022Invoked\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022array\\\u0022\\n    },\\n    \\\u0022not_invoked\\\u0022: {\\n      \\\u0022items\\\u0022: {\\n        \\\u0022additionalProperties\\\u0022: true,\\n        \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n      },\\n      \\\u0022title\\\u0022: \\\u0022Not Invoked\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022array\\\u0022\\n    },\\n    \\\u0022action_plan\\\u0022: {\\n      \\\u0022items\\\u0022: {\\n        \\\u0022additionalProperties\\\u0022: true,\\n        \\\u0022type\\\u0022: \\\u0022object\\\u0022\\n      },\\n      \\\u0022title\\\u0022: \\\u0022Action Plan\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022array\\\u0022\\n    },\\n    \\\u0022summary\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Summary\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022worker_message\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Worker Message\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022report_url\\\u0022: {\\n      \\\u0022default\\\u0022: \\\u0022\\\u0022,\\n      \\\u0022title\\\u0022: \\\u0022Report Url\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n    },\\n    \\\u0022errors\\\u0022: {\\n      \\\u0022items\\\u0022: {\\n        \\\u0022type\\\u0022: \\\u0022string\\\u0022\\n      },\\n      \\\u0022title\\\u0022: \\\u0022Errors\\\u0022,\\n      \\\u0022type\\\u0022: \\\u0022array\\\u0022\\n    }\\n  },\\n  \\\u0022required\\\u0022: []\\n}\u0022,\u0022Type\u0022:4,\u0022TargetRuntime\u0022:null,\u0022ContentRoot\u0022:null,\u0022DataVariation\u0022:null,\u0022Id\u0022:14136607}]",
+      "connections": null,
+      "tags": []
+    },
+    "locks": [],
+    "key": "31a699ce-7012-4d26-98f1-9aa344608f77"
+  }
+}

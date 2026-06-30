@@ -40,8 +40,6 @@ Why it matters: increased downtime, higher operational cost, compliance & audit 
 
 **What makes FOREMAN unique.** It **learns from every incident** (a human feedback loop captures resolutions as reusable knowledge), **connects enterprise knowledge** (a knowledge graph + semantic layer + skills library + Data Fabric surface root causes and hidden dependencies), **understands any signal** (voice, image, video, documents), and delivers **governed autonomous resolution** (it orchestrates actions, approvals, escalations, and audit trails with human oversight).
 
-**Worked example (one instance of the horizontal platform).** Case `DEL-0473` — coastal RF-cable corrosion on a telecom tower; failing batch `NG-BATCH-22`; SLA exposure ≈ ₹48k/hr. The repo ships seed data and skill cards for this and ~18 other fault archetypes, but nothing in the platform is telecom-specific — the same loop runs for a solar string, a chiller, or a production line.
-
 **Proposed ROI** (from the solution model): 60–80% faster resolution, 30–50% lower operational cost, ~40% fewer repeat failures, and 100% auditable decisions.
 
 ---

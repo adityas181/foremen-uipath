@@ -3,7 +3,7 @@
 > **UiPath AgentHack 2026 · Track 1 — UiPath Maestro Case**
 > An autonomous operations colleague that turns a single frontline observation — a photo, a video, a voice note, a message — into an **investigated, approved, executed, and fully auditable** outcome. One field signal becomes a safe, governed, *learned* resolution, orchestrated end-to-end on a UiPath **Maestro Case**.
 
-> **One closed loop — Sense → Reason → Decide → Act → Learn.** FOREMAN transforms tribal knowledge into organizational intelligence, so operations get faster, smarter, and continuously improving.
+> **One closed loop — Sense → Reason → Decide → Act → Learn.** FOREMAN transforms tribal knowledge into organizational intelligence, so operations get faster, smarter, and continuously improving-.
 
 **🔗 Links** · **Demo video:** [Youtube](https://youtu.be/GLPB2A1sPnw) **Pitch deck:** [Presentation](https://docs.google.com/presentation/d/1CBKZXUenHTAcgkzF4MA7leRiuWBN0DVL/edit?slide=id.p1#slide=id.p1)
 
@@ -127,7 +127,7 @@ The coded agents do the reasoning; the low-code layer does the orchestration, hu
 
 `UI/` is a real-time **operations control room** (React + TypeScript + Vite + Tailwind + Zustand) that renders the case **live** as it moves through every stage — the WhatsApp thread, the stage rail, each agent in the crew "thinking," the risk meter, the Neo4j fleet-blast-radius graph, the voice call, and the closing audit + learned skill.
 
-It works off a single normalized **`CaseEvent`** contract, so the same UI renders both a scripted demo and a live run:
+It works off a single normalized **`CaseEvent`** contract, so the same UI renders:
 
 ```
 UiPath Maestro Case                     your infra                    browser
@@ -138,9 +138,8 @@ UiPath Maestro Case                     your infra                    browser
 
 - **Agent side** — each LangGraph node imports the `foreman_emit.py` SDK and calls `emit(case_id, event)` at entry/exit (stage entered, agent running/completed, perception ready, risk scored, fleet ready, task raised, call line, skill written, closed…).
 - **View-backend** (`UI/server/view_backend.py`) — receives events at `POST /ingest/{case_id}` (authenticated with `FOREMAN_INGEST_SECRET`), keeps a per-case snapshot for late clients, and fans every event out over a `/ws` WebSocket. It also accepts Orchestrator and Action Center webhooks and translates them to `CaseEvent`s.
-- **UI** — subscribes to `VITE_FEED_WS_URL` and applies each event through the same reducer the demo uses. `replay_trace.py` can drive the **entire** UI from a real Maestro trace export with **no UiPath running** — ideal for the demo video.
 
-See `UI/INTEGRATION.md` and `UI/server/LIVE_SETUP.md` for the full event map, and [How to run the UI](#how-to-run-the-control-room-ui) below.
+See `UI/INTEGRATION.md` for the full event map, and [How to run the UI](#how-to-run-the-control-room-ui) below.
 
 ---
 
@@ -214,9 +213,8 @@ foremen-uipath/
 │   │   ├── replay_trace.py          # drive the whole UI from a real Maestro trace (no UiPath needed)
 │   │   ├── foreman_vision_agent.py  # inline-emit example agent
 │   │   ├── requirements.txt  requirements-deploy.txt
-│   │   └── LIVE_SETUP.md            # node -> CaseEvent map for going live
 │   ├── INTEGRATION.md               # how agents bind to the UI (the CaseEvent contract)
-│   ├── .env.example                 # VITE_FEED_WS_URL / VITE_FEED_MODE
+│   ├── .env.example                 # VITE_FEED_WS_URL
 │   ├── render.yaml                  # deploy the backend (Render/Fly/VM)
 │   ├── index.html  vite.config.ts  tailwind.config.js  postcss.config.js  tsconfig*.json
 │   ├── package.json  package-lock.json
@@ -281,8 +279,6 @@ Publish each agent to your Orchestrator feed (see [How to run each agent](#how-t
 ### 8. (Optional) Launch the control-room UI
 Run the view-backend and the UI so the case renders live (full commands in [How to run the control-room UI](#how-to-run-the-control-room-ui)). For UiPath-cloud agents to reach the backend, expose it with `cloudflared tunnel --url http://localhost:8000` and set `UI/.env`'s `VITE_FEED_WS_URL` to `wss://<host>/ws`.
 
-### 9. Run the demo
-Send a photo of a faulty asset over WhatsApp from the registered number. Twilio's `whatsapp-in` Function forwards it to the Dispatcher webhook, which starts the Maestro case — watch it advance through the stages (live in the control-room UI if running). The high-risk path pauses at the Action Center approval, then places the voice call. *(No UiPath handy? Drive the whole UI from a saved Maestro trace with `python UI/server/replay_trace.py <trace.json>` — see below.)*
 
 ---
 
@@ -336,7 +332,7 @@ FOREMAN_INGEST_SECRET=dev-secret uvicorn view_backend:app --port 8000
 # 2) the UI, in live mode (new terminal, from repo root)
 cd UI
 npm install
-cp .env.example .env                 # set VITE_FEED_MODE=live  and  VITE_FEED_WS_URL=ws://localhost:8000/ws
+cp .env.example .env                 # set VITE_FEED_MODE=live
 npm run dev                          # open the printed localhost URL
 
 # 3) replay a real Maestro trace into it (new terminal)
@@ -346,9 +342,7 @@ FOREMAN_BACKEND_URL=http://localhost:8000 FOREMAN_INGEST_SECRET=dev-secret \
 ```
 The dashboard fills in across all stages — Intake → Perceive → Investigate (dynamic crew + fleet blast-radius) → Human Review → Escalate & Call → Close.
 
-**B — Scripted demo only:** set `VITE_FEED_MODE=demo` in `UI/.env` and run `npm run dev` (no backend needed).
-
-**C — Fully live against UiPath:** instrument each coded agent with the `foreman_emit.py` SDK (the node→event map is in `UI/server/LIVE_SETUP.md`), set a **real** `FOREMAN_INGEST_SECRET` (matching the UiPath Credential asset and `UI/server/.env`), expose the backend over HTTPS (`cloudflared tunnel --url http://localhost:8000`), and point `UI/.env`'s `VITE_FEED_WS_URL` at `wss://<host>/ws`.
+**B — Fully live against UiPath:** instrument each coded agent with the `foreman_emit.py` SDK (the node→event map is in `UI/server/LIVE_SETUP.md`), set a **real** `FOREMAN_INGEST_SECRET` (matching the UiPath Credential asset and `UI/server/.env`), expose the backend over HTTPS (`cloudflared tunnel --url http://localhost:8000`), and point `UI/.env`'s `VITE_FEED_WS_URL` at `wss://<host>/ws`.
 
 > Build for hosting with `npm run build` (outputs `UI/dist/`). The backend can be deployed via `UI/render.yaml` (Render/Fly/VM).
 
